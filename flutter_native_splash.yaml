@@ -1,0 +1,8 @@
+flutter_native_splash:
+  android: true
+  ios: true
+  color: '#000029' # 배경색
+
+  android_12:
+    color: '#000029'
+    image: "assets/images/empty.png"
