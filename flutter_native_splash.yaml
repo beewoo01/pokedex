@@ -5,4 +5,4 @@ flutter_native_splash:
 
   android_12:
     color: '#000029'
-#    image: "assets/images/pokedex_splash_logo.png"
+    image: "assets/images/empty.png"
