@@ -1,8 +1,0 @@
-import 'package:flutter_pokedex/presentation/type_router.dart';
-import 'package:go_router/go_router.dart';
-
-final router = GoRouter(initialLocation: SPLASH, routes: $appRoutes);
-
-
-
-const SPLASH = "/splash";

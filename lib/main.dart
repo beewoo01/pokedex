@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pokedex/presentation/router.dart';
+import 'package:flutter_pokedex/presentation/router/router.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,13 +12,10 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routerConfig: router,
+      debugShowCheckedModeBanner: false,
       builder: (context, widget) {
-        return Scaffold(
-          body: Center(
-            child: Text('Hello World!'),
-          ),
-        );
-      }
+        return widget ?? Container();
+      },
     );
   }
 }
