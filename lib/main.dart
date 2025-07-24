@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/presentation/router/router.dart';
+import 'package:flutter_pokedex/presentation/theme/text_theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,6 +14,9 @@ class MainApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: router,
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        textTheme: CustomTextTheme()
+      ),
       builder: (context, widget) {
         if (widget == null) {
           debugPrint('Routing error: widget is null');
