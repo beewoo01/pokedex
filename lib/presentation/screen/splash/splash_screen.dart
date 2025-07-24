@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/presentation/router/route_path.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,7 +25,11 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     _controller.forward();
 
     Future.delayed(Duration(seconds: 3), () {
-      // TODO: Navigate to the login screen
+      if(context.mounted) {
+        var safeContext = context;
+        safeContext.pushReplacement(RoutePath.onBoarding);
+      }
+
     });
   }
 

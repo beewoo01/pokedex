@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/presentation/router/route_path.dart';
-import 'package:flutter_pokedex/presentation/screen/splash_screen.dart';
+import 'package:flutter_pokedex/presentation/screen/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
 part 'type_router.g.dart';
