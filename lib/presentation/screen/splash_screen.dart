@@ -1,10 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/presentation/theme/common_color.dart';
+import 'package:flutter_pokedex/utils/logger.dart';
+import 'package:go_router/go_router.dart';
+import 'package:logger/logger.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+
+  late AnimationController _controller;
+  late Animation<double> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(vsync: this, duration: Duration(seconds: 2));
+    _animation = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
+
+    _controller.forward();
+
+    Future.delayed(Duration(seconds: 3), () {
+      logger.d("Hello");
+    });
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return ColoredBox(
+      color: Navy,
+      child: Center(
+        child: FadeTransition(
+          opacity: _animation,
+          child: Image.asset(
+            "assets/images/pokedex_splash_logo.png",
+            fit: BoxFit.contain,
+          ),
+        ),
+      ),
+    );
   }
 }
