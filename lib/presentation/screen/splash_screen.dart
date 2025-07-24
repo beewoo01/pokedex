@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
-import 'package:flutter_pokedex/utils/logger.dart';
-import 'package:go_router/go_router.dart';
-import 'package:logger/logger.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -26,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     _controller.forward();
 
     Future.delayed(Duration(seconds: 3), () {
-      logger.d("Hello");
+      // TODO: Navigate to the login screen
     });
   }
 

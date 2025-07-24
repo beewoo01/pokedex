@@ -1,3 +1,3 @@
 class RoutePath {
-  static const SPLASH = "/splash";
+  static const splash = "/splash";
 }
