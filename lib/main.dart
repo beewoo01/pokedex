@@ -14,7 +14,13 @@ class MainApp extends StatelessWidget {
       routerConfig: router,
       debugShowCheckedModeBanner: false,
       builder: (context, widget) {
-        return widget ?? Container();
+        if (widget == null) {
+          debugPrint('Routing error: widget is null');
+          return Scaffold(
+            body: Center(child: Text('Page not found or routing error')),
+          );
+        }
+        return widget;
       },
     );
   }
