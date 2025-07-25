@@ -66,8 +66,6 @@ class _OnBoardingRootState extends ConsumerState<OnBoardingRoot> {
                   height: 58,
                   child: TextButton(
                     onPressed: () {
-                      logger.d("TextButton click ");
-
                       final isLast = currentPageNumber == pages.length - 1;
                       final targetPage = isLast
                           ? currentPageNumber - 1
@@ -117,7 +115,6 @@ class PageIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    logger.d("currentValue is $currentValue");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(
@@ -126,13 +123,13 @@ class PageIndicator extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 2),
           child: AnimatedContainer(
             curve: Curves.easeIn,
-            duration: const Duration(microseconds: 5000),
+            duration: const Duration(milliseconds: 250),
             width: index == currentValue ? 28 : 9,
             height: 9,
             decoration: BoxDecoration(
               color: index == currentValue
                   ? Blue
-                  : Color.fromARGB(69, 101, 183, 1),
+                  : Color.fromARGB(64, 0, 4, 87),
               borderRadius: BorderRadius.circular(11),
             ),
           ),

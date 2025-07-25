@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/gen/assets.gen.dart';
+import 'package:flutter_pokedex/presentation/component/custom_network_image.dart';
 import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
-
+import 'package:flutter_pokedex/utils/trainer_images.dart';
 import '../../../utils/logger.dart';
 
 class SecondOnBoardingScreen extends StatelessWidget {
@@ -15,15 +17,12 @@ class SecondOnBoardingScreen extends StatelessWidget {
       children: [
         SizedBox(
           height: 258.59,
-          child: Image.network(
-            "https://play.pokemonshowdown.com/sprites/trainers/hilda.png",
+          child: FadeInImage.assetNetwork(
+            fadeInCurve: Curves.bounceIn,
+            placeholder: "assets/images/empty.png",
+            height: 258.59,
+            image: TrainerImages.hilda,
             fit: BoxFit.fitHeight,
-            errorBuilder: (context, error, stackTrack) {
-              logger.e("error: $error");
-              logger.e("stackTrack: $stackTrack");
-
-              return Icon(Icons.error);
-            },
           ),
         ),
 

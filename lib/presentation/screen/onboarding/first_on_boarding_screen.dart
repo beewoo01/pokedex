@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/presentation/component/custom_network_image.dart';
 import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
-
-import '../../../utils/logger.dart';
+import 'package:flutter_pokedex/utils/trainer_images.dart';
 
 class FirstOnBoardingScreen extends StatelessWidget {
   const FirstOnBoardingScreen({super.key});
@@ -22,32 +22,14 @@ class FirstOnBoardingScreen extends StatelessWidget {
                 left: 10,
                 bottom: 0,
                 right: 110,
-                child: Image.network(
-                  "https://play.pokemonshowdown.com/sprites/trainers/bugcatcher-gen4dp.png",
-                  fit: BoxFit.fitHeight,
-                  errorBuilder: (context, error, stackTrack) {
-                    logger.e("error: $error");
-                    logger.e("stackTrack: $stackTrack");
-
-                    return Icon(Icons.error);
-                  },
-                ),
+                child: CustomNetworkImage(imageUrl: TrainerImages.bugCatcher),
               ),
 
               Positioned.fill(
                 bottom: 0,
                 right: 1,
                 left: 102,
-                child: Image.network(
-                  "https://play.pokemonshowdown.com/sprites/trainers/birch.png",
-                  fit: BoxFit.fitHeight,
-                  errorBuilder: (context, error, stackTrack) {
-                    logger.e("error: $error");
-                    logger.e("stackTrack: $stackTrack");
-
-                    return Icon(Icons.error);
-                  },
-                ),
+                child: CustomNetworkImage(imageUrl: TrainerImages.birch),
               ),
             ],
           ),

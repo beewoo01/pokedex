@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../../utils/logger.dart';
 
-class NetworkImage extends StatelessWidget {
+class CustomNetworkImage extends StatelessWidget {
   final String imageUrl;
   final BoxFit fit;
 
-  const NetworkImage({
+  const CustomNetworkImage({
     super.key,
     required this.imageUrl,
     this.fit = BoxFit.fitHeight,
