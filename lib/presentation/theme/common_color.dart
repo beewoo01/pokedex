@@ -18,3 +18,9 @@ const Black700 = Color(0xFF4D4D4D);
 
 const MaleColor = Color(0xFF2551C3);
 const FemaleColor = Color(0xFFFF7596);
+
+
+const Map<String, Color> Greys = {
+  "600" : Color(0xFF666666)
+}
+  ;

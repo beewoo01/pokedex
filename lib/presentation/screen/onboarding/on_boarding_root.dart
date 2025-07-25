@@ -1,13 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
+import 'package:flutter_pokedex/presentation/screen/onboarding/first_on_boarding_screen.dart';
+import 'package:flutter_pokedex/presentation/screen/onboarding/second_on_boarding_screen.dart';
+import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/text_theme.dart';
+import 'package:flutter_pokedex/utils/logger.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class OnBoardingRoot extends StatelessWidget {
+class OnBoardingRoot extends ConsumerStatefulWidget {
   const OnBoardingRoot({super.key});
 
   @override
+  ConsumerState<OnBoardingRoot> createState() => _OnBoardingRootState();
+}
+
+final currentPageProvider = StateProvider<int>((ref) {
+  return 0;
+});
+
+class _OnBoardingRootState extends ConsumerState<OnBoardingRoot> {
+  final pageController = PageController(initialPage: 0);
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    final currentPageNumber = ref.watch(currentPageProvider);
+    final pages = [
+      const FirstOnBoardingScreen(),
+      const SecondOnBoardingScreen(),
+    ];
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -15,63 +42,61 @@ class OnBoardingRoot extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              const Spacer(),
-              /*Image.network(
-                "https://play.pokemonshowdown.com/sprites/trainers/bugcatcher-gen4dp.png",
-              ),*/
-              SizedBox(
-                width: double.infinity,
-                height: 264,
-                child: Stack(
-                  children: [
-                    Positioned.fill(
-                      left: 10,
-                      bottom: 0,
-                      right: 110,
-                      child: Image.network(
-                        "https://play.pokemonshowdown.com/sprites/trainers/bugcatcher-gen4dp.png",
-                        fit: BoxFit.fitHeight,
-                      ),
-                    ),
-
-                    Positioned.fill(
-                      bottom: 0,
-                      right: 1,
-                      left: 102,
-                      child: Image.network(
-                        "https://play.pokemonshowdown.com/sprites/trainers/birch.png",
-                        fit: BoxFit.fitHeight,
-                      ),
-                    ),
-                  ],
+              Flexible(
+                child: PageView(
+                  controller: pageController,
+                  pageSnapping: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: pages,
                 ),
               ),
 
-              SizedBox(
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 19.5),
-                  child: Text(
-                    "Todos os Pokémons em um só Lugar",
-                    style: textTheme.displayMedium,
-                    textAlign: TextAlign.center,
+              const HeightSpace(height: 24),
+
+              PageIndicator(
+                currentValue: ref.watch(currentPageProvider),
+                pageCount: pages.length,
+              ),
+
+              const HeightSpace(height: 24),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 58,
+                  child: TextButton(
+                    onPressed: () {
+                      logger.d("TextButton click ");
+
+                      final isLast = currentPageNumber == pages.length - 1;
+                      final targetPage = isLast
+                          ? currentPageNumber - 1
+                          : currentPageNumber + 1;
+
+                      ref.read(currentPageProvider.notifier).state = targetPage;
+
+                      pageController.animateToPage(
+                        targetPage,
+                        duration: Duration(microseconds: 3000),
+                        curve: Curves.easeInOut,
+                      );
+                    },
+                    style: ButtonStyle(
+                      backgroundColor: WidgetStateProperty.all(Blue),
+                    ),
+                    child: Text(
+                      currentPageNumber != pages.length -1
+                          ? "Continue"
+                          : "Vamos começar!",
+                      style: context.headlineLarge?.copyWith(
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
               ),
-              const SizedBox(height: 16),
-              SizedBox(
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 19.5),
-                  child: Text(
-                    "Acesse uma vasta lista de Pokémon de todas as gerações já feitas pela Nintendo",
-                    style: textTheme.bodyMedium,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ),
 
-              PageIndicator()
+              const HeightSpace(height: 40),
             ],
           ),
         ),
@@ -80,28 +105,35 @@ class OnBoardingRoot extends StatelessWidget {
   }
 }
 
-class PageIndicator extends StatefulWidget {
-  const PageIndicator({super.key});
+class PageIndicator extends StatelessWidget {
+  final int currentValue;
+  final int pageCount;
 
-  @override
-  State<PageIndicator> createState() => _PageIndicatorState();
-}
+  const PageIndicator({
+    super.key,
+    this.currentValue = 0,
+    required this.pageCount,
+  });
 
-class _PageIndicatorState extends State<PageIndicator> {
   @override
   Widget build(BuildContext context) {
+    logger.d("currentValue is $currentValue");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: List.generate(
-        2,
+        pageCount,
         (index) => Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 2),
           child: AnimatedContainer(
             curve: Curves.easeIn,
-            duration: const Duration(microseconds: 500),
+            duration: const Duration(microseconds: 5000),
+            width: index == currentValue ? 28 : 9,
+            height: 9,
             decoration: BoxDecoration(
-              color: ThinPurple,
-              borderRadius: BorderRadius.circular(20),
+              color: index == currentValue
+                  ? Blue
+                  : Color.fromARGB(69, 101, 183, 1),
+              borderRadius: BorderRadius.circular(11),
             ),
           ),
         ),
