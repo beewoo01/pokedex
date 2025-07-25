@@ -22,14 +22,26 @@ class FirstOnBoardingScreen extends StatelessWidget {
                 left: 10,
                 bottom: 0,
                 right: 110,
-                child: CustomNetworkImage(imageUrl: TrainerImages.bugCatcher),
+                child: FadeInImage.assetNetwork(
+                  fadeInCurve: Curves.easeIn,
+                  placeholder: "assets/images/empty.png",
+                  height: 258.59,
+                  image: TrainerImages.bugCatcher,
+                  fit: BoxFit.fitHeight,
+                ),
               ),
 
               Positioned.fill(
                 bottom: 0,
                 right: 1,
                 left: 102,
-                child: CustomNetworkImage(imageUrl: TrainerImages.birch),
+                child: FadeInImage.assetNetwork(
+                  fadeInCurve: Curves.easeIn,
+                  placeholder: "assets/images/empty.png",
+                  height: 258.59,
+                  image: TrainerImages.birch,
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ],
           ),
