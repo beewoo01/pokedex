@@ -5,8 +5,8 @@ import 'package:flutter/animation.dart';
 
 const Navy = Color(0xFF000029);
 
-const Purple = Color(0xFF173EA5);
-const ThinPurple = Color(0xFF4565B7);
+const Blue = Color(0xFF173EA5);
+const ThinBlue = Color(0xFF4565B7);
 
 const Black50 = Color(0xFFF2F2F2);
 const Black100 = Color(0xFFE6E6E6);
