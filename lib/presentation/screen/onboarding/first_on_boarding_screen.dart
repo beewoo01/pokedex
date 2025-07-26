@@ -64,7 +64,7 @@ class FirstOnBoardingScreen extends StatelessWidget {
             ),
           ),
         ),
-        const HeightSpace(height: AppSpacing.padding16),
+        const HeightSpace(height: AppSpacing.height16),
         SizedBox(
           width: double.infinity,
           child: Padding(

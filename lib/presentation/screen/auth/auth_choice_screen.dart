@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/gen/assets.gen.dart';
 import 'package:flutter_pokedex/presentation/component/poke_text_button.dart';
 import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
+import 'package:flutter_pokedex/presentation/router/route_path.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_pokedex/utils/app_spacing.dart';
 import 'package:flutter_pokedex/utils/trainer_images.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class AuthChoiceScreen extends StatelessWidget {
   const AuthChoiceScreen({super.key});
@@ -80,10 +82,8 @@ class AuthChoiceScreen extends StatelessWidget {
                 ),
                 const HeightSpace(height: 32),
                 PokeTextButton(
-                    callback: () {
-                      //TODO : Move Join Screen
-                    },
-                    title: "Criar conta"
+                  callback: () => context.push(RoutePath.join),
+                  title: "Criar conta",
                 ),
                 PokeTextButton(
                   callback: () {
