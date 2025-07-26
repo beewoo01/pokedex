@@ -27,9 +27,9 @@ class JoinScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const HeightSpace(height: 48),
+            const HeightSpace(height: AppSpacing.spacing48),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 47),
+              padding: EdgeInsets.symmetric(horizontal: AppSpacing.spacing47),
               child: FadeInImage.assetNetwork(
                 fadeInCurve: Curves.bounceInOut,
                 placeholder: Assets.images.empty.path,
@@ -38,11 +38,13 @@ class JoinScreen extends StatelessWidget {
                 fit: BoxFit.fitHeight,
               ),
             ),
-            const HeightSpace(height: 23),
+            const HeightSpace(height: AppSpacing.spacing23),
             SizedBox(
               width: double.infinity,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 19.5),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.spacing19_5,
+                ),
                 child: Text(
                   "Falta pouco para explorar esse mundo!",
                   style: context.displayMedium,
@@ -60,10 +62,14 @@ class JoinScreen extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 19.5),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppSpacing.spacing19_5,
+                      ),
                       child: Text(
                         "Como deseja se conectar?",
-                        style: context.bodyMedium?.copyWith(color: greys["600"]),
+                        style: context.bodyMedium?.copyWith(
+                          color: greys["600"],
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     ),

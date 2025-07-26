@@ -12,7 +12,6 @@ class SecondOnBoardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double spaceHeight = 42.41;
-    const double paddingSize = 19.5;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
@@ -33,9 +32,11 @@ class SecondOnBoardingScreen extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: paddingSize),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.spacing19_5,
+            ),
             child: Text(
-              "Mantenha sua\nPokédex atualizada",
+              "Mantenha sua Pokédex atualizada",
               style: context.displayMedium,
               textAlign: TextAlign.center,
             ),
@@ -45,7 +46,9 @@ class SecondOnBoardingScreen extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: paddingSize),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.spacing19_5,
+            ),
             child: Text(
               "Cadastre-se e mantenha seu perfil, pokémon favoritos, configurações e muito mais, salvos no aplicativo, mesmo sem conexão com a internet.",
               style: context.bodyMedium?.copyWith(color: greys["600"]),
