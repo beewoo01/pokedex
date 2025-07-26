@@ -17,6 +17,12 @@ class CustomNetworkImage extends StatelessWidget {
     return Image.network(
       imageUrl,
       fit: fit,
+      loadingBuilder: (context, child, loadingProgress) {
+        if (loadingProgress == null) return child;
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
       errorBuilder: (context, error, stackTrack) {
         logger.e("error: $error");
         logger.e("stackTrack: $stackTrack");

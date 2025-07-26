@@ -42,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
-      color: Navy,
+      color: navy,
       child: Center(
         child: FadeTransition(
           opacity: _animation,

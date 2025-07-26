@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/gen/assets.gen.dart';
 import 'package:flutter_pokedex/presentation/component/custom_network_image.dart';
 import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
+import 'package:flutter_pokedex/utils/app_spacing.dart';
 import 'package:flutter_pokedex/utils/trainer_images.dart';
 
 class FirstOnBoardingScreen extends StatelessWidget {
@@ -10,12 +12,14 @@ class FirstOnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double trainerWidgetHeight = 264;
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         SizedBox(
           width: double.infinity,
-          height: 264,
+          height: trainerWidgetHeight,
           child: Stack(
             children: [
               Positioned.fill(
@@ -24,7 +28,7 @@ class FirstOnBoardingScreen extends StatelessWidget {
                 right: 110,
                 child: FadeInImage.assetNetwork(
                   fadeInCurve: Curves.easeIn,
-                  placeholder: "assets/images/empty.png",
+                  placeholder: Assets.images.empty.path,
                   height: 258.59,
                   image: TrainerImages.bugCatcher,
                   fit: BoxFit.fitHeight,
@@ -37,7 +41,7 @@ class FirstOnBoardingScreen extends StatelessWidget {
                 left: 102,
                 child: FadeInImage.assetNetwork(
                   fadeInCurve: Curves.easeIn,
-                  placeholder: "assets/images/empty.png",
+                  placeholder: Assets.images.empty.path,
                   height: 258.59,
                   image: TrainerImages.birch,
                   fit: BoxFit.fitHeight,
@@ -60,14 +64,14 @@ class FirstOnBoardingScreen extends StatelessWidget {
             ),
           ),
         ),
-        const HeightSpace(height: 16),
+        const HeightSpace(height: AppSpacing.padding16),
         SizedBox(
           width: double.infinity,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 19.5),
             child: Text(
               "Acesse uma vasta lista de Pokémon de todas as gerações já feitas pela Nintendo",
-              style: context.bodyMedium?.copyWith(color: Greys["600"]),
+              style: context.bodyMedium?.copyWith(color: greys["600"]),
               textAlign: TextAlign.center,
             ),
           ),
