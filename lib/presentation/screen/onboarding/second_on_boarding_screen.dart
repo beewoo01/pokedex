@@ -11,7 +11,6 @@ class SecondOnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double trainerHeight = 258.59;
     const double spaceHeight = 42.41;
     const double paddingSize = 19.5;
 
@@ -19,11 +18,11 @@ class SecondOnBoardingScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         SizedBox(
-          height: trainerHeight,
+          height: AppSpacing.trainerHeight,
           child: FadeInImage.assetNetwork(
             fadeInCurve: Curves.bounceIn,
             placeholder: Assets.images.empty.path,
-            height: trainerHeight,
+            height: AppSpacing.trainerHeight,
             image: TrainerImages.hilda,
             fit: BoxFit.fitHeight,
           ),
