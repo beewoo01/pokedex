@@ -80,7 +80,7 @@ class _OnBoardingRootState extends ConsumerState<OnBoardingRoot> {
 
                     pageController.animateToPage(
                       targetPage,
-                      duration: Duration(microseconds: 3000),
+                      duration: Duration(milliseconds: 300),
                       curve: Curves.easeInOut,
                     );
                   },
