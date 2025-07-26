@@ -77,7 +77,7 @@ class JoinScreen extends StatelessWidget {
                       return;
                     },
                   ),
-                  const HeightSpace(height: 12),
+                  const HeightSpace(height: AppSpacing.spacing12),
                   SocialLoginButton(
                     iconPath: Assets.icons.icGoogleLogin.path,
                     title: "Continuar com o Google",
@@ -85,7 +85,7 @@ class JoinScreen extends StatelessWidget {
                       return;
                     },
                   ),
-                  const HeightSpace(height: 12),
+                  const HeightSpace(height: AppSpacing.spacing12),
                   PokeTextButton(
                     callback: () {
                       //TODO : Move Join Email Screen

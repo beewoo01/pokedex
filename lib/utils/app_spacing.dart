@@ -7,4 +7,5 @@ class AppSpacing {
   static const double height32 = 32;
 
   static const double spacing16 = 16;
+  static const double spacing12 = 12;
 }

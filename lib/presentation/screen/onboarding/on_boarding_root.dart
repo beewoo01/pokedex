@@ -64,7 +64,9 @@ class _OnBoardingRootState extends ConsumerState<OnBoardingRoot> {
 
               const HeightSpace(height: 24),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppSpacing.spacing12,
+                ),
                 child: PokeTextButton(
                   callback: () {
                     final isLast = currentPageNumber == pages.length - 1;
