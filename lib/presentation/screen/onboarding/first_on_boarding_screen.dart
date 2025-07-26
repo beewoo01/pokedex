@@ -56,7 +56,9 @@ class FirstOnBoardingScreen extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 19.5),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.spacing19_5,
+            ),
             child: Text(
               "Todos os Pokémons em um só Lugar",
               style: context.displayMedium,
@@ -64,11 +66,13 @@ class FirstOnBoardingScreen extends StatelessWidget {
             ),
           ),
         ),
-        const HeightSpace(height: AppSpacing.padding16),
+        const HeightSpace(height: AppSpacing.spacing16),
         SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 19.5),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSpacing.spacing19_5,
+            ),
             child: Text(
               "Acesse uma vasta lista de Pokémon de todas as gerações já feitas pela Nintendo",
               style: context.bodyMedium?.copyWith(color: greys["600"]),

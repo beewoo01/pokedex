@@ -17,12 +17,29 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/arrow_back_button.svg
+  SvgGenImage get arrowBackButton =>
+      const SvgGenImage('assets/icons/arrow_back_button.svg');
+
   /// File path: assets/icons/arrow_forward.svg
   SvgGenImage get arrowForward =>
       const SvgGenImage('assets/icons/arrow_forward.svg');
 
+  /// File path: assets/icons/ic_apple_login.svg
+  SvgGenImage get icAppleLogin =>
+      const SvgGenImage('assets/icons/ic_apple_login.svg');
+
+  /// File path: assets/icons/ic_google_login.svg
+  SvgGenImage get icGoogleLogin =>
+      const SvgGenImage('assets/icons/ic_google_login.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values => [arrowForward];
+  List<SvgGenImage> get values => [
+    arrowBackButton,
+    arrowForward,
+    icAppleLogin,
+    icGoogleLogin,
+  ];
 }
 
 class $AssetsImagesGen {
