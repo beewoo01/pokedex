@@ -1,7 +1,4 @@
-
 import 'package:flutter/animation.dart';
-
-
 
 const navy = Color(0xFF000029);
 
@@ -16,11 +13,9 @@ const black900 = Color(0xFF1A1A1A);
 const black800 = Color(0xFF333333);
 const black700 = Color(0xFF4D4D4D);
 
+const lightGrey = Color(0xFFDBDCDD);
+
 const maleColor = Color(0xFF2551C3);
 const femaleColor = Color(0xFFFF7596);
 
-
-const Map<String, Color> greys = {
-  "600" : Color(0xFF666666)
-}
-  ;
+const Map<String, Color> greys = {"600": Color(0xFF666666)};
