@@ -50,10 +50,10 @@ class JoinScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const HeightSpace(height: AppSpacing.height16),
+            const HeightSpace(height: AppSpacing.spacing16),
             Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: AppSpacing.height16,
+                horizontal: AppSpacing.spacing16,
               ),
               child: Column(
                 children: [

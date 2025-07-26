@@ -65,7 +65,7 @@ class AuthChoiceScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppSpacing.padding16),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.spacing16),
             child: Column(
               children: [
                 const HeightSpace(height: 39),
@@ -74,7 +74,7 @@ class AuthChoiceScreen extends StatelessWidget {
                   style: context.displayLarge?.copyWith(color: Colors.black),
                   textAlign: TextAlign.center,
                 ),
-                const HeightSpace(height: AppSpacing.padding16),
+                const HeightSpace(height: AppSpacing.spacing16),
                 Text(
                   "Basta criar uma conta e começar a explorar o mundo dos Pokémon hoje!",
                   style: context.bodyMedium?.copyWith(color: greys["600"]),

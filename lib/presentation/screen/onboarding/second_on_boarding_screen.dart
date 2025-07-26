@@ -41,7 +41,7 @@ class SecondOnBoardingScreen extends StatelessWidget {
             ),
           ),
         ),
-        const HeightSpace(height: AppSpacing.padding16),
+        const HeightSpace(height: AppSpacing.spacing16),
         SizedBox(
           width: double.infinity,
           child: Padding(
