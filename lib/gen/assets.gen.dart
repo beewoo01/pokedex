@@ -17,12 +17,12 @@ import 'package:vector_graphics/vector_graphics.dart' as _vg;
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
-  /// File path: assets/icons/arrow_foward.svg
-  SvgGenImage get arrowFoward =>
-      const SvgGenImage('assets/icons/arrow_foward.svg');
+  /// File path: assets/icons/arrow_forward.svg
+  SvgGenImage get arrowForward =>
+      const SvgGenImage('assets/icons/arrow_forward.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [arrowFoward];
+  List<SvgGenImage> get values => [arrowForward];
 }
 
 class $AssetsImagesGen {
