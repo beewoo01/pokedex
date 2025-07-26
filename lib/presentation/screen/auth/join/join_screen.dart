@@ -24,77 +24,79 @@ class JoinScreen extends StatelessWidget {
         centerTitle: true,
         title: Text("Criar conta", style: context.headlineLarge),
       ),
-      body: Column(
-        children: [
-          const HeightSpace(height: 48),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 47),
-            child: FadeInImage.assetNetwork(
-              fadeInCurve: Curves.bounceInOut,
-              placeholder: Assets.images.empty.path,
-              image: TrainerImages.wallace6,
-              width: double.infinity,
-              fit: BoxFit.fitHeight,
-            ),
-          ),
-          const HeightSpace(height: 23),
-          SizedBox(
-            width: double.infinity,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 19.5),
-              child: Text(
-                "Falta pouco para explorar esse mundo!",
-                style: context.displayMedium,
-                textAlign: TextAlign.center,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const HeightSpace(height: 48),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 47),
+              child: FadeInImage.assetNetwork(
+                fadeInCurve: Curves.bounceInOut,
+                placeholder: Assets.images.empty.path,
+                image: TrainerImages.wallace6,
+                width: double.infinity,
+                fit: BoxFit.fitHeight,
               ),
             ),
-          ),
-          const HeightSpace(height: AppSpacing.height16),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: AppSpacing.height16,
+            const HeightSpace(height: 23),
+            SizedBox(
+              width: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 19.5),
+                child: Text(
+                  "Falta pouco para explorar esse mundo!",
+                  style: context.displayMedium,
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ),
-            child: Column(
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 19.5),
-                    child: Text(
-                      "Como deseja se conectar?",
-                      style: context.bodyMedium?.copyWith(color: greys["600"]),
-                      textAlign: TextAlign.center,
+            const HeightSpace(height: AppSpacing.height16),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.height16,
+              ),
+              child: Column(
+                children: [
+                  SizedBox(
+                    width: double.infinity,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 19.5),
+                      child: Text(
+                        "Como deseja se conectar?",
+                        style: context.bodyMedium?.copyWith(color: greys["600"]),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
-                ),
 
-                const HeightSpace(height: AppSpacing.height32),
-                SocialLoginButton(
-                  iconPath: Assets.icons.icAppleLogin.path,
-                  title: "Continuar com a Apple",
-                  callback: () {
-                    return;
-                  },
-                ),
-                const HeightSpace(height: 12),
-                SocialLoginButton(
-                  iconPath: Assets.icons.icGoogleLogin.path,
-                  title: "Continuar com o Google",
-                  callback: () {
-                    return;
-                  },
-                ),
-                const HeightSpace(height: 12),
-                PokeTextButton(
-                  callback: () {
-                    //TODO : Move Join Email Screen
-                  },
-                  title: "Continuar com um e-mail",
-                ),
-              ],
+                  const HeightSpace(height: AppSpacing.height32),
+                  SocialLoginButton(
+                    iconPath: Assets.icons.icAppleLogin.path,
+                    title: "Continuar com a Apple",
+                    callback: () {
+                      return;
+                    },
+                  ),
+                  const HeightSpace(height: 12),
+                  SocialLoginButton(
+                    iconPath: Assets.icons.icGoogleLogin.path,
+                    title: "Continuar com o Google",
+                    callback: () {
+                      return;
+                    },
+                  ),
+                  const HeightSpace(height: 12),
+                  PokeTextButton(
+                    callback: () {
+                      //TODO : Move Join Email Screen
+                    },
+                    title: "Continuar com um e-mail",
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
