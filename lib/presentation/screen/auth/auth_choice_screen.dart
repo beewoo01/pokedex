@@ -79,9 +79,16 @@ class AuthChoiceScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 const HeightSpace(height: 32),
-                PokeTextButton(callback: () {}, title: "Criar conta"),
                 PokeTextButton(
-                  callback: () {},
+                    callback: () {
+                      //TODO : Move Join Screen
+                    },
+                    title: "Criar conta"
+                ),
+                PokeTextButton(
+                  callback: () {
+                    //TODO : Move Login Screen
+                  },
                   title: "Ja tenho uma conta",
                   backgroundColor: Colors.white,
                   textColor: blue,
