@@ -12,7 +12,7 @@ class PokeTextButton extends StatelessWidget {
     super.key,
     required this.callback,
     required this.title,
-    this.backgroundColor = Blue,
+    this.backgroundColor = blue,
     this.textColor = Colors.white,
   });
 

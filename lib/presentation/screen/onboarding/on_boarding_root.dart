@@ -7,6 +7,7 @@ import 'package:flutter_pokedex/presentation/screen/onboarding/second_on_boardin
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/text_theme.dart';
+import 'package:flutter_pokedex/utils/app_spacing.dart';
 import 'package:flutter_pokedex/utils/logger.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -89,7 +90,7 @@ class _OnBoardingRootState extends ConsumerState<OnBoardingRoot> {
                 ),
               ),
 
-              const HeightSpace(height: 40),
+              const HeightSpace(height: AppSpacing.height40),
             ],
           ),
         ),
@@ -122,9 +123,7 @@ class PageIndicator extends StatelessWidget {
             width: index == currentValue ? 28 : 9,
             height: 9,
             decoration: BoxDecoration(
-              color: index == currentValue
-                  ? Blue
-                  : Color.fromARGB(64, 0, 4, 87),
+              color: index == currentValue ? blue : const Color(0x40000457),
               borderRadius: BorderRadius.circular(11),
             ),
           ),

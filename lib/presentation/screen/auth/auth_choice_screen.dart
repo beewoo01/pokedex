@@ -4,6 +4,7 @@ import 'package:flutter_pokedex/presentation/component/poke_text_button.dart';
 import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
+import 'package:flutter_pokedex/utils/app_spacing.dart';
 import 'package:flutter_pokedex/utils/trainer_images.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -12,19 +13,20 @@ class AuthChoiceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double toolbarToTrainer = 94;
+    const double trainerHeight = 272;
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          const HeightSpace(height: 40),
+          const HeightSpace(height: AppSpacing.height40),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(
                 "Pular",
-                style: context.headlineMedium?.copyWith(
-                  color: Colors.black,
-                ),
+                style: context.headlineMedium?.copyWith(color: Colors.black),
               ),
               IconButton(
                 onPressed: () {},
@@ -32,37 +34,36 @@ class AuthChoiceScreen extends StatelessWidget {
               ),
             ],
           ),
-          const HeightSpace(height: 94),
+          const HeightSpace(height: toolbarToTrainer),
           SizedBox(
-            height: 272,
+            height: trainerHeight,
             child: Stack(
               children: [
                 Positioned(
                   left: 21,
                   right: 141,
                   child: FadeInImage.assetNetwork(
-                    placeholder: "assets/images/empty.png",
+                    height: trainerHeight,
+                    placeholder: Assets.images.empty.path,
                     image: TrainerImages.yancy,
                     fit: BoxFit.fitHeight,
-                    height: 272,
                   ),
                 ),
                 Positioned(
                   left: 120,
                   right: -17,
                   child: FadeInImage.assetNetwork(
-                    placeholder: "assets/images/empty.png",
+                    height: trainerHeight,
+                    placeholder: Assets.images.empty.path,
                     image: TrainerImages.hilbert,
                     fit: BoxFit.fitHeight,
-                    height: 272,
                   ),
                 ),
-
               ],
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.padding16),
             child: Column(
               children: [
                 const HeightSpace(height: 39),
@@ -71,10 +72,10 @@ class AuthChoiceScreen extends StatelessWidget {
                   style: context.displayLarge?.copyWith(color: Colors.black),
                   textAlign: TextAlign.center,
                 ),
-                const HeightSpace(height: 16),
+                const HeightSpace(height: AppSpacing.padding16),
                 Text(
                   "Basta criar uma conta e começar a explorar o mundo dos Pokémon hoje!",
-                  style: context.bodyMedium?.copyWith(color: Greys["600"]),
+                  style: context.bodyMedium?.copyWith(color: greys["600"]),
                   textAlign: TextAlign.center,
                 ),
                 const HeightSpace(height: 32),
@@ -83,12 +84,12 @@ class AuthChoiceScreen extends StatelessWidget {
                   callback: () {},
                   title: "Ja tenho uma conta",
                   backgroundColor: Colors.white,
-                  textColor: Blue,
+                  textColor: blue,
                 ),
               ],
             ),
           ),
-          const HeightSpace(height: 40),
+          const HeightSpace(height: AppSpacing.height40),
         ],
       ),
     );
