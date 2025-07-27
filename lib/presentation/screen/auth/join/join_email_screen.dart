@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pokedex/gen/assets.gen.dart';
+import 'package:flutter_pokedex/presentation/component/poke_app_bar.dart';
 import 'package:flutter_pokedex/presentation/component/poke_text_button.dart';
 import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
+import 'package:flutter_pokedex/presentation/router/route_path.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_pokedex/utils/app_spacing.dart';
+import 'package:flutter_pokedex/utils/poke_text_field.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
+
 
 final emailProvider = StateProvider<String>((ref) => '');
 
@@ -25,14 +27,8 @@ class JoinEmailScreen extends ConsumerWidget {
     final isValid = ref.watch(isEmailValidProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => context.pop(),
-          icon: SvgPicture.asset(Assets.icons.arrowBackButton.path),
-        ),
-        centerTitle: true,
-        title: Text("Criar conta", style: context.headlineLarge),
-      ),
+      appBar: PokeAppBar(callback: () => context.pop(), title: 'Criar conta'),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,
@@ -49,19 +45,11 @@ class JoinEmailScreen extends ConsumerWidget {
 
                 const HeightSpace(height: AppSpacing.spacing24),
 
-                TextField(
+                PokeTextField(
                   onChanged: (value) =>
                       ref.read(emailProvider.notifier).state = value,
                   keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    hint: Text(
-                      "E-mail",
-                      style: context.bodyLarge?.copyWith(color: greys['400']),
-                    ),
-                    enabledBorder: outlinedBorder(),
-                    disabledBorder: outlinedBorder(),
-                    focusedBorder: outlinedBorder(borderColor: black),
-                  ),
+                  hint: 'E-mail',
                 ),
 
                 const HeightSpace(height: 8),
@@ -74,14 +62,14 @@ class JoinEmailScreen extends ConsumerWidget {
 
                 PokeTextButton(
                   callback: () {
-                    if(isValid) {
-
+                    if (isValid) {
+                      context.push(RoutePath.joinPassword);
                     }
                   },
                   isEnable: isValid,
                   title: "Continear",
-                  backgroundColor: !isValid? greys['100']! : blue,
-                  textColor: !isValid? greys['400']! : Colors.white,
+                  backgroundColor: !isValid ? greys['100']! : blue,
+                  textColor: !isValid ? greys['400']! : Colors.white,
                 ),
 
                 const HeightSpace(height: 40),
@@ -90,13 +78,6 @@ class JoinEmailScreen extends ConsumerWidget {
           ),
         ),
       ),
-    );
-  }
-
-  OutlineInputBorder outlinedBorder({Color? borderColor}) {
-    return OutlineInputBorder(
-      borderSide: BorderSide(color: borderColor ?? greys['400']!),
-      borderRadius: BorderRadius.all(Radius.circular(5)),
     );
   }
 }

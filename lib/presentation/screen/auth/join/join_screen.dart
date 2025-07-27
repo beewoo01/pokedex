@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/gen/assets.gen.dart';
+import 'package:flutter_pokedex/presentation/component/poke_app_bar.dart';
 import 'package:flutter_pokedex/presentation/component/poke_text_button.dart';
 import 'package:flutter_pokedex/presentation/component/social_login_button.dart';
 import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
@@ -17,14 +18,8 @@ class JoinScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => context.pop(),
-          icon: SvgPicture.asset(Assets.icons.arrowBackButton.path),
-        ),
-        centerTitle: true,
-        title: Text("Criar conta", style: context.headlineLarge),
-      ),
+      appBar: PokeAppBar(callback: () => context.pop(), title: 'Criar conta'),
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [

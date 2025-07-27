@@ -12,6 +12,7 @@ class PokeAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.white,
       leading: IconButton(
         onPressed: () => callback(),
         icon: SvgPicture.asset(Assets.icons.arrowBackButton.path),
