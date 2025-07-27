@@ -22,7 +22,6 @@ class JoinEmailScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    //final email = ref.watch(emailProvider);
     final isValid = ref.watch(isEmailValidProvider);
 
     return Scaffold(
@@ -34,57 +33,60 @@ class JoinEmailScreen extends ConsumerWidget {
         centerTitle: true,
         title: Text("Criar conta", style: context.headlineLarge),
       ),
-      body: SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const HeightSpace(height: AppSpacing.spacing40),
+      body: SafeArea(
+        child: SizedBox(
+          width: double.infinity,
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const HeightSpace(height: AppSpacing.spacing40),
 
-              Text("Vamos começar!", style: context.displaySmall),
+                Text("Vamos começar!", style: context.displaySmall),
 
-              Text("Qual é o seu e-mail?", style: context.displayLarge),
+                Text("Qual é o seu e-mail?", style: context.displayLarge),
 
-              const HeightSpace(height: AppSpacing.spacing24),
+                const HeightSpace(height: AppSpacing.spacing24),
 
-              TextField(
-                onChanged: (value) =>
-                    ref.read(emailProvider.notifier).state = value,
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  hint: Text(
-                    "E-mail",
-                    style: context.bodyLarge?.copyWith(color: greys['400']),
+                TextField(
+                  onChanged: (value) =>
+                      ref.read(emailProvider.notifier).state = value,
+                  keyboardType: TextInputType.emailAddress,
+                  decoration: InputDecoration(
+                    hint: Text(
+                      "E-mail",
+                      style: context.bodyLarge?.copyWith(color: greys['400']),
+                    ),
+                    enabledBorder: outlinedBorder(),
+                    disabledBorder: outlinedBorder(),
+                    focusedBorder: outlinedBorder(borderColor: black),
                   ),
-                  enabledBorder: outlinedBorder(),
-                  disabledBorder: outlinedBorder(),
-                  focusedBorder: outlinedBorder(borderColor: black),
                 ),
-              ),
 
-              const HeightSpace(height: 8),
+                const HeightSpace(height: 8),
 
-              Text(
-                "Use um endereço de e-mail válido.",
-                style: context.bodySmall?.copyWith(color: greys['700']),
-              ),
-              const Spacer(),
+                Text(
+                  "Use um endereço de e-mail válido.",
+                  style: context.bodySmall?.copyWith(color: greys['700']),
+                ),
+                const Spacer(),
 
-              PokeTextButton(
-                callback: () {
-                  if(isValid) {
+                PokeTextButton(
+                  callback: () {
+                    if(isValid) {
 
-                  }
-                },
-                title: "Continear",
-                backgroundColor: !isValid? greys['100']! : blue,
-                textColor: !isValid? greys['400']! : Colors.white,
-              ),
+                    }
+                  },
+                  isEnable: isValid,
+                  title: "Continear",
+                  backgroundColor: !isValid? greys['100']! : blue,
+                  textColor: !isValid? greys['400']! : Colors.white,
+                ),
 
-              const HeightSpace(height: 40),
-            ],
+                const HeightSpace(height: 40),
+              ],
+            ),
           ),
         ),
       ),
