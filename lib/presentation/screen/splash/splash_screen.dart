@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/gen/assets.gen.dart';
 import 'package:flutter_pokedex/presentation/router/route_path.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:go_router/go_router.dart';
@@ -47,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         child: FadeTransition(
           opacity: _animation,
           child: Image.asset(
-            "assets/images/pokedex_splash_logo.png",
+            Assets.images.pokedexSplashLogo.path,
             fit: BoxFit.contain,
           ),
         ),

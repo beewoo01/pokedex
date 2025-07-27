@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/presentation/router/route_path.dart';
 import 'package:flutter_pokedex/presentation/screen/auth/auth_choice_screen.dart';
+import 'package:flutter_pokedex/presentation/screen/auth/join/join_email_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/auth/join/join_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/onboarding/on_boarding_root.dart';
 import 'package:flutter_pokedex/presentation/screen/splash/splash_screen.dart';
@@ -35,11 +36,23 @@ class AuthChoiceRoute extends GoRouteData with _$AuthChoiceRoute {
       const AuthChoiceScreen();
 }
 
-@TypedGoRoute<JoinRoute>(path: RoutePath.join)
+@TypedGoRoute<JoinRoute>(
+  path: RoutePath.join,
+  routes: [
+    TypedGoRoute<JoinEmailRoute>(path: 'email')
+  ],
+)
 class JoinRoute extends GoRouteData with _$JoinRoute {
   const JoinRoute();
 
   @override
+  Widget build(BuildContext context, GoRouterState state) => const JoinScreen();
+}
+
+class JoinEmailRoute extends GoRouteData with _$JoinEmailRoute {
+  const JoinEmailRoute();
+
+  @override
   Widget build(BuildContext context, GoRouterState state) =>
-      const JoinScreen();
+      const JoinEmailScreen();
 }

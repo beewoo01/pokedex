@@ -71,7 +71,7 @@ class AuthChoiceScreen extends StatelessWidget {
                 const HeightSpace(height: 39),
                 Text(
                   "Está pronto para essa aventura?",
-                  style: context.displayLarge?.copyWith(color: Colors.black),
+                  style: context.displayMedium?.copyWith(color: Colors.black),
                   textAlign: TextAlign.center,
                 ),
                 const HeightSpace(height: AppSpacing.spacing16),
