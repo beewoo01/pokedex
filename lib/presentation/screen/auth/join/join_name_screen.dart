@@ -61,7 +61,7 @@ class JoinNameScreen extends ConsumerWidget {
                 PokeTextButton(
                   callback: () {
                     if (isValid) {
-
+                      context.pushReplacement(RoutePath.joinSuccess);
                     }
                   },
                   isEnable: isValid,

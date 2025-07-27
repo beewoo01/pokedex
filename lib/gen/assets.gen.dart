@@ -49,6 +49,10 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/check_bg.png
+  AssetGenImage get checkBg =>
+      const AssetGenImage('assets/images/check_bg.png');
+
   /// File path: assets/images/empty.png
   AssetGenImage get empty => const AssetGenImage('assets/images/empty.png');
 
@@ -57,7 +61,7 @@ class $AssetsImagesGen {
       const AssetGenImage('assets/images/pokedex_splash_logo.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [empty, pokedexSplashLogo];
+  List<AssetGenImage> get values => [checkBg, empty, pokedexSplashLogo];
 }
 
 class Assets {
