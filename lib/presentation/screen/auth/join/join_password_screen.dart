@@ -79,7 +79,7 @@ class JoinPasswordScreen extends ConsumerWidget {
                     }
                   },
                   isEnable: isValid,
-                  title: "Continear",
+                  title: "Continuar",
                   backgroundColor: !isValid ? greys['100']! : blue,
                   textColor: !isValid ? greys['400']! : Colors.white,
                 ),

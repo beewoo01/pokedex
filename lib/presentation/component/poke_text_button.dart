@@ -22,8 +22,6 @@ class PokeTextButton extends StatefulWidget {
   State<PokeTextButton> createState() => _PokeTextButtonState();
 }
 
-enum ButtonState { idle, pressed }
-
 class _PokeTextButtonState extends State<PokeTextButton> {
   var _pressed = false;
 
@@ -41,19 +39,14 @@ class _PokeTextButtonState extends State<PokeTextButton> {
     }
   });
 
-  void _onTapCancel() => setState(() {
-    if (widget.isEnable) {
-      _pressed = false;
-    }
-  });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTapDown: (_) => _onTapDown(),
       onTapUp: (_) => _onTapUp(),
-      onTapCancel: () => _onTapCancel(),
-      onTap: () => widget.callback(),
+      onTapCancel: () => _onTapUp(),
+      onTap: () => widget.isEnable ? widget.callback() : null,
       child: AnimatedScale(
         scale: _scale,
         duration: Duration(milliseconds: 100),
