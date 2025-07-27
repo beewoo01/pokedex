@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/gen/assets.gen.dart';
+import 'package:flutter_pokedex/presentation/component/poke_app_bar.dart';
 import 'package:flutter_pokedex/presentation/component/poke_text_button.dart';
 import 'package:flutter_pokedex/presentation/component/social_login_button.dart';
 import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
+import 'package:flutter_pokedex/presentation/router/route_path.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_pokedex/utils/app_spacing.dart';
@@ -16,14 +18,8 @@ class JoinScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () => context.pop(),
-          icon: SvgPicture.asset(Assets.icons.arrowBackButton.path),
-        ),
-        centerTitle: true,
-        title: Text("Criar conta", style: context.headlineLarge),
-      ),
+      appBar: PokeAppBar(callback: () => context.pop(), title: 'Criar conta'),
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -93,9 +89,7 @@ class JoinScreen extends StatelessWidget {
                   ),
                   const HeightSpace(height: AppSpacing.spacing12),
                   PokeTextButton(
-                    callback: () {
-                      //TODO : Move Join Email Screen
-                    },
+                    callback: () => context.push(RoutePath.joinEmail),
                     title: "Continuar com um e-mail",
                   ),
                 ],

@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomTextTheme extends TextTheme {
   @override
   TextStyle? get displayLarge =>
-      GoogleFonts.poppins().copyWith(fontSize: 26, fontWeight: FontWeight.w500);
+      GoogleFonts.poppins().copyWith(fontSize: 26, fontWeight: FontWeight.w600);
 
   @override
   TextStyle? get displayMedium =>
@@ -12,7 +12,7 @@ class CustomTextTheme extends TextTheme {
 
   @override
   TextStyle? get displaySmall =>
-      GoogleFonts.poppins().copyWith(fontSize: 26, fontWeight: FontWeight.w500);
+      GoogleFonts.poppins().copyWith(fontSize: 26, fontWeight: FontWeight.w400);
 
   @override
   TextStyle? get titleLarge =>
@@ -57,4 +57,8 @@ class CustomTextTheme extends TextTheme {
   @override
   TextStyle? get bodyMedium =>
       GoogleFonts.poppins().copyWith(fontSize: 14, fontWeight: FontWeight.w400);
+
+  @override
+  TextStyle? get bodySmall =>
+      GoogleFonts.poppins().copyWith(fontSize: 12, fontWeight: FontWeight.w400);
 }

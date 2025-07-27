@@ -29,6 +29,9 @@ class $AssetsIconsGen {
   SvgGenImage get icAppleLogin =>
       const SvgGenImage('assets/icons/ic_apple_login.svg');
 
+  /// File path: assets/icons/ic_eye.svg
+  SvgGenImage get icEye => const SvgGenImage('assets/icons/ic_eye.svg');
+
   /// File path: assets/icons/ic_google_login.svg
   SvgGenImage get icGoogleLogin =>
       const SvgGenImage('assets/icons/ic_google_login.svg');
@@ -38,6 +41,7 @@ class $AssetsIconsGen {
     arrowBackButton,
     arrowForward,
     icAppleLogin,
+    icEye,
     icGoogleLogin,
   ];
 }

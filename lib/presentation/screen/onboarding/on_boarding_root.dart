@@ -55,14 +55,14 @@ class _OnBoardingRootState extends ConsumerState<OnBoardingRoot> {
                 ),
               ),
 
-              const HeightSpace(height: 24),
+              const HeightSpace(height: AppSpacing.spacing24),
 
               PageIndicator(
                 currentValue: ref.watch(currentPageProvider),
                 pageCount: pages.length,
               ),
 
-              const HeightSpace(height: 24),
+              const HeightSpace(height: AppSpacing.spacing24),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: AppSpacing.spacing12,
