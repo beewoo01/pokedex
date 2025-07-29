@@ -82,7 +82,7 @@ class JoinSuccessScreen extends StatelessWidget {
                     const HeightSpace(height: AppSpacing.spacing32),
                     PokeTextButton(
                       callback: () {
-                        context.push(RoutePath.joinPassword);
+                        //context.push(RoutePath.joinPassword);
                       },
                       title: "Continuar",
                     ),

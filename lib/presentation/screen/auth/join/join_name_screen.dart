@@ -32,7 +32,7 @@ class JoinNameScreen extends ConsumerWidget {
         child: SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.spacing16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -45,7 +45,8 @@ class JoinNameScreen extends ConsumerWidget {
                 const HeightSpace(height: AppSpacing.spacing24),
 
                 PokeTextField(
-                  onChanged: (value) => ref.read(nameProvider.notifier).state = value,
+                  onChanged: (value) =>
+                      ref.read(nameProvider.notifier).state = value,
                   keyboardType: TextInputType.name,
                   hint: 'Name',
                 ),
