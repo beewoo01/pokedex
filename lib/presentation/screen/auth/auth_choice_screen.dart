@@ -80,7 +80,7 @@ class AuthChoiceScreen extends StatelessWidget {
                   style: context.bodyMedium?.copyWith(color: greys["600"]),
                   textAlign: TextAlign.center,
                 ),
-                const HeightSpace(height: 32),
+                const HeightSpace(height: AppSpacing.spacing32),
                 PokeTextButton(
                   callback: () => context.push(RoutePath.join),
                   title: "Criar conta",

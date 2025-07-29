@@ -43,58 +43,56 @@ class _OnBoardingRootState extends ConsumerState<OnBoardingRoot> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-        child: Center(
-          child: Column(
-            children: [
-              Flexible(
-                child: PageView(
-                  controller: pageController,
-                  pageSnapping: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  children: pages,
-                ),
+        child: Column(
+          children: [
+            Flexible(
+              child: PageView(
+                controller: pageController,
+                pageSnapping: true,
+                physics: const NeverScrollableScrollPhysics(),
+                children: pages,
               ),
+            ),
 
-              const HeightSpace(height: AppSpacing.spacing24),
+            const HeightSpace(height: AppSpacing.spacing24),
 
-              PageIndicator(
-                currentValue: ref.watch(currentPageProvider),
-                pageCount: pages.length,
+            PageIndicator(
+              currentValue: ref.watch(currentPageProvider),
+              pageCount: pages.length,
+            ),
+
+            const HeightSpace(height: AppSpacing.spacing24),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: AppSpacing.spacing12,
               ),
+              child: PokeTextButton(
+                callback: () {
+                  final isLast = currentPageNumber == pages.length - 1;
 
-              const HeightSpace(height: AppSpacing.spacing24),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: AppSpacing.spacing12,
-                ),
-                child: PokeTextButton(
-                  callback: () {
-                    final isLast = currentPageNumber == pages.length - 1;
+                  if (isLast) {
+                    context.pushReplacement(RoutePath.authChoice);
+                    return;
+                  }
 
-                    if (isLast) {
-                      context.pushReplacement(RoutePath.authChoice);
-                      return;
-                    }
+                  final targetPage = currentPageNumber + 1;
 
-                    final targetPage = currentPageNumber + 1;
+                  ref.read(currentPageProvider.notifier).state = targetPage;
 
-                    ref.read(currentPageProvider.notifier).state = targetPage;
-
-                    pageController.animateToPage(
-                      targetPage,
-                      duration: Duration(milliseconds: 300),
-                      curve: Curves.easeInOut,
-                    );
-                  },
-                  title: currentPageNumber != pages.length - 1
-                      ? "Continue"
-                      : "Vamos começar!",
-                ),
+                  pageController.animateToPage(
+                    targetPage,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeInOut,
+                  );
+                },
+                title: currentPageNumber != pages.length - 1
+                    ? "Continue"
+                    : "Vamos começar!",
               ),
+            ),
 
-              const HeightSpace(height: AppSpacing.height40),
-            ],
-          ),
+            const HeightSpace(height: AppSpacing.height40),
+          ],
         ),
       ),
     );

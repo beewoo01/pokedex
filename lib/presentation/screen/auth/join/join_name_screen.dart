@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pokedex/gen/assets.gen.dart';
 import 'package:flutter_pokedex/presentation/component/poke_app_bar.dart';
 import 'package:flutter_pokedex/presentation/component/poke_text_button.dart';
 import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
@@ -9,28 +8,22 @@ import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_pokedex/utils/app_spacing.dart';
 import 'package:flutter_pokedex/utils/poke_text_field.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-final obscureProvider = StateProvider<bool>((ref) => true);
-final passwordProvider = StateProvider<String>((ref) => '');
+final nameProvider = StateProvider<String>((ref) => '');
 
-final isPasswordValidProvider = Provider<bool>((ref) {
-  final password = ref.watch(passwordProvider);
-  final passwordRegex = RegExp(
-    r'^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$',
-  );
-
-  return passwordRegex.hasMatch(password);
+final isNameValidProvider = Provider<bool>((ref) {
+  final name = ref.watch(nameProvider);
+  final nameRegex = RegExp(r'^[a-zA-Z가-힣1-9]{2,}$');
+  return nameRegex.hasMatch(name);
 });
 
-class JoinPasswordScreen extends ConsumerWidget {
-  const JoinPasswordScreen({super.key});
+class JoinNameScreen extends ConsumerWidget {
+  const JoinNameScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final obscureState = ref.watch(obscureProvider);
-    final isValid = ref.watch(isPasswordValidProvider);
+    final isValid = ref.watch(isNameValidProvider);
 
     return Scaffold(
       appBar: PokeAppBar(callback: () => context.pop(), title: 'Criar conta'),
@@ -39,36 +32,29 @@ class JoinPasswordScreen extends ConsumerWidget {
         child: SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.spacing16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const HeightSpace(height: AppSpacing.spacing40),
 
-                Text("Agora...", style: context.displaySmall),
+                Text("Pra finalizar", style: context.displaySmall),
 
-                Text("Crie uma senha", style: context.displayLarge),
+                Text("Qual é o seu nome?", style: context.displayLarge),
 
                 const HeightSpace(height: AppSpacing.spacing24),
 
                 PokeTextField(
                   onChanged: (value) =>
-                      ref.read(passwordProvider.notifier).state = value,
-                  obscureText: obscureState,
-                  keyboardType: TextInputType.text,
-                  hint: 'Senha',
-                  suffixIcon: IconButton(
-                    onPressed: () {
-                      ref.read(obscureProvider.notifier).state = !obscureState;
-                    },
-                    icon: SvgPicture.asset(Assets.icons.icEye.path),
-                  ),
+                      ref.read(nameProvider.notifier).state = value,
+                  keyboardType: TextInputType.name,
+                  hint: 'Name',
                 ),
 
                 const HeightSpace(height: 8),
 
                 Text(
-                  "Sua senha deve ter pelo menos 8 caracteres",
+                  "Esse será seu nome de usuário no aplicativo.",
                   style: context.bodySmall?.copyWith(color: greys['700']),
                 ),
                 const Spacer(),
@@ -76,7 +62,7 @@ class JoinPasswordScreen extends ConsumerWidget {
                 PokeTextButton(
                   callback: () {
                     if (isValid) {
-                      context.push(RoutePath.joinName);
+                      context.pushReplacement(RoutePath.joinSuccess);
                     }
                   },
                   isEnable: isValid,
