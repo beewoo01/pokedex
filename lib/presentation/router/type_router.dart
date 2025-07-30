@@ -6,6 +6,7 @@ import 'package:flutter_pokedex/presentation/screen/auth/join/join_name_screen.d
 import 'package:flutter_pokedex/presentation/screen/auth/join/join_password_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/auth/join/join_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/auth/join/join_success_screen.dart';
+import 'package:flutter_pokedex/presentation/screen/auth/login/login_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/onboarding/on_boarding_root.dart';
 import 'package:flutter_pokedex/presentation/screen/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -86,4 +87,14 @@ class JoinSuccessRoute extends GoRouteData with _$JoinSuccessRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const JoinSuccessScreen();
+}
+
+@TypedGoRoute<LoginRoute>(path: RoutePath.login)
+class LoginRoute extends GoRouteData with _$LoginRoute {
+  const LoginRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return LoginScreen();
+  }
 }
