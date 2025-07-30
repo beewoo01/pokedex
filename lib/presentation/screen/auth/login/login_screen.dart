@@ -18,7 +18,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PokeAppBar(callback: () => context.pop(), title: 'Criar conta'),
+      appBar: PokeAppBar(callback: () => context.pop(), title: 'Entrar'),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
@@ -29,7 +29,7 @@ class LoginScreen extends StatelessWidget {
               child: FadeInImage.assetNetwork(
                 fadeInCurve: Curves.bounceInOut,
                 placeholder: Assets.images.empty.path,
-                image: TrainerImages.wallace6,
+                image: TrainerImages.victor,
                 width: double.infinity,
                 fit: BoxFit.fitHeight,
               ),
@@ -42,7 +42,7 @@ class LoginScreen extends StatelessWidget {
                   horizontal: AppSpacing.spacing19_5,
                 ),
                 child: Text(
-                  "Falta pouco para explorar esse mundo!",
+                  "Que bom te ver aqui novamente!",
                   style: context.displayMedium,
                   textAlign: TextAlign.center,
                 ),
