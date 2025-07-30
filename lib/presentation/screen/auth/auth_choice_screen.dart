@@ -86,9 +86,7 @@ class AuthChoiceScreen extends StatelessWidget {
                   title: "Criar conta",
                 ),
                 PokeTextButton(
-                  callback: () {
-                    //TODO : Move Login Screen
-                  },
+                  callback: () => context.push(RoutePath.login),
                   title: "Ja tenho uma conta",
                   backgroundColor: Colors.white,
                   textColor: blue,
