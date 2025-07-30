@@ -18,7 +18,8 @@ class LoginEmailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const VGap(height: AppSpacing.height40)
+            const VGap(height: AppSpacing.height40),
+
           ]
         )
       ),

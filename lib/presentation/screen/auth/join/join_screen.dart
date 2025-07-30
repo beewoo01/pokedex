@@ -9,7 +9,6 @@ import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_pokedex/utils/app_spacing.dart';
 import 'package:flutter_pokedex/utils/trainer_images.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 class JoinScreen extends StatelessWidget {

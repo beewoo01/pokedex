@@ -92,7 +92,7 @@ class JoinSuccessRoute extends GoRouteData with _$JoinSuccessRoute {
 @TypedGoRoute<LoginRoute>(
     path: RoutePath.login,
     routes: [
-      TypedGoRoute<LoginEmailRoute>(path: RoutePath.loginEmail)
+      TypedGoRoute<LoginEmailRoute>(path: 'email')
     ]
 )
 class LoginRoute extends GoRouteData with _$LoginRoute {
