@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/presentation/component/poke_app_bar.dart';
+import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginEmailScreen extends StatelessWidget {
@@ -11,6 +12,14 @@ class LoginEmailScreen extends StatelessWidget {
       appBar: PokeAppBar(
           callback: () => context.pop(),
           title: "Entrar"
+      ),
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            //VGap(height: height)
+          ]
+        )
       ),
     );
   }

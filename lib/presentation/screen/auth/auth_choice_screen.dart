@@ -22,7 +22,7 @@ class AuthChoiceScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          const HeightSpace(height: AppSpacing.height40),
+          const VGap(height: AppSpacing.height40),
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -36,7 +36,7 @@ class AuthChoiceScreen extends StatelessWidget {
               ),
             ],
           ),
-          const HeightSpace(height: toolbarToTrainer),
+          const VGap(height: toolbarToTrainer),
           SizedBox(
             height: trainerHeight,
             child: Stack(
@@ -68,19 +68,19 @@ class AuthChoiceScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: AppSpacing.spacing16),
             child: Column(
               children: [
-                const HeightSpace(height: 39),
+                const VGap(height: 39),
                 Text(
                   "Está pronto para essa aventura?",
                   style: context.displayMedium?.copyWith(color: Colors.black),
                   textAlign: TextAlign.center,
                 ),
-                const HeightSpace(height: AppSpacing.spacing16),
+                const VGap(height: AppSpacing.spacing16),
                 Text(
                   "Basta criar uma conta e começar a explorar o mundo dos Pokémon hoje!",
                   style: context.bodyMedium?.copyWith(color: greys["600"]),
                   textAlign: TextAlign.center,
                 ),
-                const HeightSpace(height: AppSpacing.spacing32),
+                const VGap(height: AppSpacing.spacing32),
                 PokeTextButton(
                   callback: () => context.push(RoutePath.join),
                   title: "Criar conta",
@@ -94,7 +94,7 @@ class AuthChoiceScreen extends StatelessWidget {
               ],
             ),
           ),
-          const HeightSpace(height: AppSpacing.height40),
+          const VGap(height: AppSpacing.height40),
         ],
       ),
     );

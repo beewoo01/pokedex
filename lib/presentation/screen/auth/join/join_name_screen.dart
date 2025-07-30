@@ -36,13 +36,13 @@ class JoinNameScreen extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const HeightSpace(height: AppSpacing.spacing40),
+                const VGap(height: AppSpacing.spacing40),
 
                 Text("Pra finalizar", style: context.displaySmall),
 
                 Text("Qual é o seu nome?", style: context.displayLarge),
 
-                const HeightSpace(height: AppSpacing.spacing24),
+                const VGap(height: AppSpacing.spacing24),
 
                 PokeTextField(
                   onChanged: (value) =>
@@ -51,7 +51,7 @@ class JoinNameScreen extends ConsumerWidget {
                   hint: 'Name',
                 ),
 
-                const HeightSpace(height: 8),
+                const VGap(height: 8),
 
                 Text(
                   "Esse será seu nome de usuário no aplicativo.",
@@ -71,7 +71,7 @@ class JoinNameScreen extends ConsumerWidget {
                   textColor: !isValid ? greys['400']! : Colors.white,
                 ),
 
-                const HeightSpace(height: 40),
+                const VGap(height: 40),
               ],
             ),
           ),

@@ -23,7 +23,7 @@ class LoginScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const HeightSpace(height: AppSpacing.spacing48),
+            const VGap(height: AppSpacing.spacing48),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: AppSpacing.spacing47),
               child: FadeInImage.assetNetwork(
@@ -34,7 +34,7 @@ class LoginScreen extends StatelessWidget {
                 fit: BoxFit.fitHeight,
               ),
             ),
-            const HeightSpace(height: AppSpacing.spacing23),
+            const VGap(height: AppSpacing.spacing23),
             SizedBox(
               width: double.infinity,
               child: Padding(
@@ -48,7 +48,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const HeightSpace(height: AppSpacing.spacing16),
+            const VGap(height: AppSpacing.spacing16),
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: AppSpacing.spacing16,
@@ -71,7 +71,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
 
-                  const HeightSpace(height: AppSpacing.height32),
+                  const VGap(height: AppSpacing.height32),
                   SocialLoginButton(
                     iconPath: Assets.icons.icAppleLogin.path,
                     title: "Continuar com a Apple",
@@ -79,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                       return;
                     },
                   ),
-                  const HeightSpace(height: AppSpacing.spacing12),
+                  const VGap(height: AppSpacing.spacing12),
                   SocialLoginButton(
                     iconPath: Assets.icons.icGoogleLogin.path,
                     title: "Continuar com o Google",
@@ -87,7 +87,7 @@ class LoginScreen extends StatelessWidget {
                       return;
                     },
                   ),
-                  const HeightSpace(height: AppSpacing.spacing12),
+                  const VGap(height: AppSpacing.spacing12),
                   PokeTextButton(
                     callback: () {
                       //TODO Login

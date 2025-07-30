@@ -43,13 +43,13 @@ class JoinPasswordScreen extends ConsumerWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const HeightSpace(height: AppSpacing.spacing40),
+                const VGap(height: AppSpacing.spacing40),
 
                 Text("Agora...", style: context.displaySmall),
 
                 Text("Crie uma senha", style: context.displayLarge),
 
-                const HeightSpace(height: AppSpacing.spacing24),
+                const VGap(height: AppSpacing.spacing24),
 
                 PokeTextField(
                   onChanged: (value) =>
@@ -65,7 +65,7 @@ class JoinPasswordScreen extends ConsumerWidget {
                   ),
                 ),
 
-                const HeightSpace(height: 8),
+                const VGap(height: 8),
 
                 Text(
                   "Sua senha deve ter pelo menos 8 caracteres",
@@ -85,7 +85,7 @@ class JoinPasswordScreen extends ConsumerWidget {
                   textColor: !isValid ? greys['400']! : Colors.white,
                 ),
 
-                const HeightSpace(height: 40),
+                const VGap(height: 40),
               ],
             ),
           ),

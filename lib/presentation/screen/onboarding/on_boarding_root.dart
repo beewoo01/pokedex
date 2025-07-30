@@ -54,14 +54,14 @@ class _OnBoardingRootState extends ConsumerState<OnBoardingRoot> {
               ),
             ),
 
-            const HeightSpace(height: AppSpacing.spacing24),
+            const VGap(height: AppSpacing.spacing24),
 
             PageIndicator(
               currentValue: ref.watch(currentPageProvider),
               pageCount: pages.length,
             ),
 
-            const HeightSpace(height: AppSpacing.spacing24),
+            const VGap(height: AppSpacing.spacing24),
             Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: AppSpacing.spacing12,
@@ -91,7 +91,7 @@ class _OnBoardingRootState extends ConsumerState<OnBoardingRoot> {
               ),
             ),
 
-            const HeightSpace(height: AppSpacing.height40),
+            const VGap(height: AppSpacing.height40),
           ],
         ),
       ),

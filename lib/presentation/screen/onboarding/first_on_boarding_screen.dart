@@ -51,7 +51,7 @@ class FirstOnBoardingScreen extends StatelessWidget {
           ),
         ),
 
-        const HeightSpace(height: 37.11),
+        const VGap(height: 37.11),
 
         SizedBox(
           width: double.infinity,
@@ -66,7 +66,7 @@ class FirstOnBoardingScreen extends StatelessWidget {
             ),
           ),
         ),
-        const HeightSpace(height: AppSpacing.spacing16),
+        const VGap(height: AppSpacing.spacing16),
         SizedBox(
           width: double.infinity,
           child: Padding(
