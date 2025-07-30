@@ -89,9 +89,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   const VGap(height: AppSpacing.spacing12),
                   PokeTextButton(
-                    callback: () {
-                      //TODO Login
-                    },
+                    callback: () => context.push(RoutePath.loginEmail),
                     title: "Continuar com um e-mail",
                   ),
                 ],

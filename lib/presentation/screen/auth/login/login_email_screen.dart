@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/presentation/component/poke_app_bar.dart';
 import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
+import 'package:flutter_pokedex/utils/app_spacing.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginEmailScreen extends StatelessWidget {
@@ -17,7 +18,7 @@ class LoginEmailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            //VGap(height: height)
+            const VGap(height: AppSpacing.height40)
           ]
         )
       ),
