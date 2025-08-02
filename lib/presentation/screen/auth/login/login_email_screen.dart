@@ -23,7 +23,6 @@ class LoginEmailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isObscure = ref.watch(passwordObscureState);
-    logger.e("isObscure $isObscure");
     return Scaffold(
       appBar: PokeAppBar(callback: () => context.pop(), title: "Entrar"),
       backgroundColor: Colors.white,
