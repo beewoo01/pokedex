@@ -84,7 +84,8 @@ class LoginEmailScreen extends ConsumerWidget {
                         obscureText: isObscure,
                         suffixIcon: IconButton(
                           onPressed: () {
-                            ref.read(passwordObscureState.notifier).state = !isObscure;
+                            ref.read(passwordObscureState.notifier).state =
+                                !isObscure;
                           },
                           icon: SvgPicture.asset(Assets.icons.icEye.path),
                         ),

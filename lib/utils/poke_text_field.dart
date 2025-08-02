@@ -3,7 +3,7 @@ import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 
 class PokeTextField extends StatefulWidget {
-  final Function(String) onChanged;
+  final ValueChanged<String>? onChanged;
   final TextInputType keyboardType;
   final String hint;
   final double height;
@@ -12,7 +12,7 @@ class PokeTextField extends StatefulWidget {
 
   const PokeTextField({
     super.key,
-    required this.onChanged,
+    this.onChanged,
     this.keyboardType = TextInputType.text,
     required this.hint,
     this.height = 52,
@@ -31,7 +31,7 @@ class _PokeTextFieldState extends State<PokeTextField> {
       width: double.infinity,
       height: widget.height,
       child: TextField(
-        onChanged: (value) => widget.onChanged(value),
+        onChanged: (value) => widget.onChanged?.call(value),
         keyboardType: widget.keyboardType,
         obscureText: widget.obscureText,
         decoration: InputDecoration(

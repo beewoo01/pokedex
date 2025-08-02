@@ -9,7 +9,6 @@ import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_pokedex/utils/app_spacing.dart';
 import 'package:flutter_pokedex/utils/trainer_images.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -75,17 +74,13 @@ class LoginScreen extends StatelessWidget {
                   SocialLoginButton(
                     iconPath: Assets.icons.icAppleLogin.path,
                     title: "Continuar com a Apple",
-                    callback: () {
-                      return;
-                    },
+                    callback: () {},
                   ),
                   const VGap(height: AppSpacing.spacing12),
                   SocialLoginButton(
                     iconPath: Assets.icons.icGoogleLogin.path,
                     title: "Continuar com o Google",
-                    callback: () {
-                      return;
-                    },
+                    callback: () {},
                   ),
                   const VGap(height: AppSpacing.spacing12),
                   PokeTextButton(

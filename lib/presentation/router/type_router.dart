@@ -90,25 +90,19 @@ class JoinSuccessRoute extends GoRouteData with _$JoinSuccessRoute {
 }
 
 @TypedGoRoute<LoginRoute>(
-    path: RoutePath.login,
-    routes: [
-      TypedGoRoute<LoginEmailRoute>(path: 'email')
-    ]
+  path: RoutePath.login,
+  routes: [TypedGoRoute<LoginEmailRoute>(path: 'email')],
 )
 class LoginRoute extends GoRouteData with _$LoginRoute {
   const LoginRoute();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) {
-    return LoginScreen();
-  }
+  Widget build(BuildContext context, GoRouterState state) => LoginScreen();
 }
 
 class LoginEmailRoute extends GoRouteData with _$LoginEmailRoute {
   const LoginEmailRoute();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) {
-    return LoginEmailScreen();
-  }
+  Widget build(BuildContext context, GoRouterState state) => LoginEmailScreen();
 }
