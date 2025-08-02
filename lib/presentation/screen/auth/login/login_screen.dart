@@ -9,15 +9,16 @@ import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_pokedex/utils/app_spacing.dart';
 import 'package:flutter_pokedex/utils/trainer_images.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
-class JoinScreen extends StatelessWidget {
-  const JoinScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PokeAppBar(callback: () => context.pop(), title: 'Criar conta'),
+      appBar: PokeAppBar(callback: () => context.pop(), title: 'Entrar'),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
@@ -28,7 +29,7 @@ class JoinScreen extends StatelessWidget {
               child: FadeInImage.assetNetwork(
                 fadeInCurve: Curves.bounceInOut,
                 placeholder: Assets.images.empty.path,
-                image: TrainerImages.wallace6,
+                image: TrainerImages.victor,
                 width: double.infinity,
                 fit: BoxFit.fitHeight,
               ),
@@ -41,7 +42,7 @@ class JoinScreen extends StatelessWidget {
                   horizontal: AppSpacing.spacing19_5,
                 ),
                 child: Text(
-                  "Falta pouco para explorar esse mundo!",
+                  "Que bom te ver aqui novamente!",
                   style: context.displayMedium,
                   textAlign: TextAlign.center,
                 ),
@@ -88,7 +89,7 @@ class JoinScreen extends StatelessWidget {
                   ),
                   const VGap(height: AppSpacing.spacing12),
                   PokeTextButton(
-                    callback: () => context.push(RoutePath.joinEmail),
+                    callback: () => context.push(RoutePath.loginEmail),
                     title: "Continuar com um e-mail",
                   ),
                 ],

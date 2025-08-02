@@ -17,6 +17,7 @@ class PokeAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () => callback(),
         icon: SvgPicture.asset(Assets.icons.arrowBackButton.path),
       ),
+      scrolledUnderElevation: 0,
       centerTitle: true,
       title: Text(title, style: context.headlineLarge),
     );

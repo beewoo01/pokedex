@@ -8,6 +8,7 @@ class PokeTextButton extends StatefulWidget {
   final Color backgroundColor;
   final Color textColor;
   final bool isEnable;
+  final TextStyle? style;
 
   const PokeTextButton({
     super.key,
@@ -16,6 +17,7 @@ class PokeTextButton extends StatefulWidget {
     this.isEnable = true,
     this.backgroundColor = blue,
     this.textColor = Colors.white,
+    this.style,
   });
 
   @override
@@ -39,7 +41,6 @@ class _PokeTextButtonState extends State<PokeTextButton> {
     }
   });
 
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -61,7 +62,9 @@ class _PokeTextButtonState extends State<PokeTextButton> {
             ),
             child: Text(
               widget.title,
-              style: context.headlineLarge?.copyWith(color: widget.textColor),
+              style:
+                  widget.style?.copyWith(color: widget.textColor) ??
+                  context.headlineLarge?.copyWith(color: widget.textColor),
             ),
           ),
         ),

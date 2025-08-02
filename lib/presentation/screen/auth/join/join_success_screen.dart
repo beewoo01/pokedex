@@ -62,24 +62,24 @@ class JoinSuccessScreen extends StatelessWidget {
                 ),
               ),
 
-              const HeightSpace(height: 57),
+              const VGap(height: 57),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: AppSpacing.spacing16),
                 child: Column(
                   children: [
-                    const HeightSpace(height: 51),
+                    const VGap(height: 51),
                     Text(
                       "Sua conta foi criada com Sucesso!",
                       style: context.displayMedium?.copyWith(color: Colors.black),
                       textAlign: TextAlign.center,
                     ),
-                    const HeightSpace(height: AppSpacing.spacing16),
+                    const VGap(height: AppSpacing.spacing16),
                     Text(
                       "Seja bem-vindo, treinador! Estamos animados para acompanhar sua jornada.",
                       style: context.bodyMedium?.copyWith(color: greys["600"]),
                       textAlign: TextAlign.center,
                     ),
-                    const HeightSpace(height: AppSpacing.spacing32),
+                    const VGap(height: AppSpacing.spacing32),
                     PokeTextButton(
                       callback: () {
                         //context.push(RoutePath.joinPassword);
@@ -89,7 +89,7 @@ class JoinSuccessScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              const HeightSpace(height: AppSpacing.spacing40),
+              const VGap(height: AppSpacing.spacing40),
             ],
           ),
         ),

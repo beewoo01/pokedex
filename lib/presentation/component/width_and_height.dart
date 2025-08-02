@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class HeightSpace extends StatelessWidget {
+class VGap extends StatelessWidget {
   final double height;
 
-  const HeightSpace({super.key, required this.height});
+  const VGap({super.key, required this.height});
 
   @override
   Widget build(BuildContext context) {
@@ -11,10 +11,10 @@ class HeightSpace extends StatelessWidget {
   }
 }
 
-class WidthSpace extends StatelessWidget {
+class WGap extends StatelessWidget {
   final double width;
 
-  const WidthSpace({super.key, required this.width});
+  const WGap({super.key, required this.width});
 
   @override
   Widget build(BuildContext context) {
