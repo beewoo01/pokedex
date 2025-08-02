@@ -13,7 +13,7 @@ class PokeTextField extends StatefulWidget {
   const PokeTextField({
     super.key,
     required this.onChanged,
-    required this.keyboardType,
+    this.keyboardType = TextInputType.text,
     required this.hint,
     this.height = 52,
     this.obscureText = false,
