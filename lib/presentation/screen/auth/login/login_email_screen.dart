@@ -3,6 +3,7 @@ import 'package:flutter_pokedex/gen/assets.gen.dart';
 import 'package:flutter_pokedex/presentation/component/poke_app_bar.dart';
 import 'package:flutter_pokedex/presentation/component/poke_text_button.dart';
 import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
+import 'package:flutter_pokedex/presentation/router/route_path.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_pokedex/utils/app_spacing.dart';
@@ -115,7 +116,10 @@ class LoginEmailScreen extends ConsumerWidget {
                 bottom: MediaQuery.of(context).viewInsets.bottom + bottomSpace,
                 left: 12,
                 right: 12,
-                child: PokeTextButton(callback: () {}, title: "Entrar"),
+                child: PokeTextButton(
+                  callback: () => context.pushReplacement(RoutePath.loginSuccess),
+                  title: "Entrar",
+                ),
               ),
             ],
           ),
