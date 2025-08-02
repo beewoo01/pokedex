@@ -3,6 +3,7 @@ class RoutePath {
   static const onBoarding = "/onBoarding";
   static const login = "/login";
   static const loginEmail = "/login/email";
+  static const loginSuccess = "/login/success";
   static const join = "/join";
   static const joinEmail = "/join/email";
   static const joinPassword = "/join/password";

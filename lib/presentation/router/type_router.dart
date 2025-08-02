@@ -8,6 +8,7 @@ import 'package:flutter_pokedex/presentation/screen/auth/join/join_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/auth/join/join_success_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/auth/login/login_email_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/auth/login/login_screen.dart';
+import 'package:flutter_pokedex/presentation/screen/auth/login/login_success_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/onboarding/on_boarding_root.dart';
 import 'package:flutter_pokedex/presentation/screen/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -91,18 +92,31 @@ class JoinSuccessRoute extends GoRouteData with _$JoinSuccessRoute {
 
 @TypedGoRoute<LoginRoute>(
   path: RoutePath.login,
-  routes: [TypedGoRoute<LoginEmailRoute>(path: 'email')],
+  routes: [
+    TypedGoRoute<LoginEmailRoute>(path: 'email'),
+    TypedGoRoute<LoginSuccessRoute>(path: 'success'),
+  ],
 )
 class LoginRoute extends GoRouteData with _$LoginRoute {
   const LoginRoute();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => LoginScreen();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const LoginScreen();
 }
 
 class LoginEmailRoute extends GoRouteData with _$LoginEmailRoute {
   const LoginEmailRoute();
 
   @override
-  Widget build(BuildContext context, GoRouterState state) => LoginEmailScreen();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const LoginEmailScreen();
+}
+
+class LoginSuccessRoute extends GoRouteData with _$LoginSuccessRoute {
+  const LoginSuccessRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const LoginSuccessScreen();
 }
