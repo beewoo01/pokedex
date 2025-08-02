@@ -31,7 +31,7 @@ class _PokeTextFieldState extends State<PokeTextField> {
       width: double.infinity,
       height: widget.height,
       child: TextField(
-        onChanged: (value) => widget.onChanged?.call(value),
+        onChanged: widget.onChanged,
         keyboardType: widget.keyboardType,
         obscureText: widget.obscureText,
         decoration: InputDecoration(
