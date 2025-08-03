@@ -16,54 +16,66 @@ class LoginSuccessScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            children: [
-              Expanded(
-                child: Stack(
-                  alignment: Alignment.bottomCenter,
-                  children: [
-                    Positioned(
-                      left: -29,
-                      right: 70.58,
-                      child: FadeInImage.assetNetwork(
-                        placeholder: Assets.images.empty.path,
-                        image: TrainerImages.blue,
-                        fit: BoxFit.fitHeight,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                AspectRatio(
+                  aspectRatio: 13.5/20,
+                  child: Stack(
+                    alignment: Alignment.bottomCenter,
+                    children: [
+                      Align(
+                        alignment: Alignment.bottomLeft,
+                        child: FractionallySizedBox(
+                          heightFactor: 0.57,
+                          child: FractionalTranslation(
+                            translation: const Offset(-0.10, 0),
+                            child: FadeInImage.assetNetwork(
+                              placeholder: Assets.images.empty.path,
+                              image: TrainerImages.blue,
+                              fit: BoxFit.fitHeight,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                    Positioned(
-                      left: 54.58,
-                      right: -13,
-                      child: FadeInImage.assetNetwork(
-                        placeholder: Assets.images.empty.path,
-                        image: TrainerImages.cynthia,
-                        fit: BoxFit.fitHeight,
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: FractionallySizedBox(
+                          heightFactor: 0.56,
+                          child: FadeInImage.assetNetwork(
+                            placeholder: Assets.images.empty.path,
+                            image: TrainerImages.cynthia,
+                            fit: BoxFit.fitHeight,
+                            excludeFromSemantics: false,
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              const VGap(height: 51),
-              Text(
-                "Bem-vindo de volta, Treinador!",
-                style: context.displayMedium?.copyWith(color: Colors.black),
-                textAlign: TextAlign.center,
-              ),
 
-              const VGap(height: AppSpacing.spacing16),
+                const VGap(height: 51),
+                Text(
+                  "Bem-vindo de volta, Treinador!",
+                  style: context.displayMedium?.copyWith(color: Colors.black),
+                  textAlign: TextAlign.center,
+                ),
 
-              Text(
-                "Esperamos que tenha tido uma longa jornada desde a última vez em que nos visitou.",
-                style: context.bodyMedium?.copyWith(color: greys["600"]),
-                textAlign: TextAlign.center,
-              ),
+                const VGap(height: AppSpacing.spacing16),
 
-              const VGap(height: AppSpacing.height32),
+                Text(
+                  "Esperamos que tenha tido uma longa jornada desde a última vez em que nos visitou.",
+                  style: context.bodyMedium?.copyWith(color: greys["600"]),
+                  textAlign: TextAlign.center,
+                ),
 
-              PokeTextButton(callback: () {}, title: "Continuar"),
+                const VGap(height: AppSpacing.height32),
 
-              const VGap(height: AppSpacing.height40),
-            ],
+                PokeTextButton(callback: () {}, title: "Continuar"),
+
+                const VGap(height: AppSpacing.height40),
+              ],
+            ),
           ),
         ),
       ),
