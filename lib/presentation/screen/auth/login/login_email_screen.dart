@@ -19,7 +19,6 @@ class LoginEmailScreen extends ConsumerWidget {
   const LoginEmailScreen({super.key});
 
   final int bottomSpace = 40;
-  final int findEmailButtonHeight = 57;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -84,7 +83,7 @@ class LoginEmailScreen extends ConsumerWidget {
                     suffixIcon: IconButton(
                       onPressed: () {
                         ref.read(passwordObscureState.notifier).state =
-                        !isObscure;
+                            !isObscure;
                       },
                       icon: SvgPicture.asset(Assets.icons.icEye.path),
                     ),
@@ -102,9 +101,7 @@ class LoginEmailScreen extends ConsumerWidget {
 
                   VGap(
                     height:
-                    MediaQuery.of(context).viewInsets.bottom +
-                        bottomSpace +
-                        findEmailButtonHeight,
+                        MediaQuery.of(context).viewInsets.bottom + bottomSpace,
                   ),
                 ],
               ),
