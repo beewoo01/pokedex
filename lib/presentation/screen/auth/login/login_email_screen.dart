@@ -31,97 +31,93 @@ class LoginEmailScreen extends ConsumerWidget {
         child: SizedBox(
           width: double.infinity,
           height: double.infinity,
-          child: Stack(
-            children: [
-              SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                  child: Column(
-                    children: [
-                      const VGap(height: AppSpacing.spacing40),
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              child: Column(
+                children: [
+                  const VGap(height: AppSpacing.spacing40),
 
-                      Text("Bem vindo de volta!", style: context.displaySmall),
+                  Text("Bem vindo de volta!", style: context.displaySmall),
 
-                      Text("Preencha os dados", style: context.displayLarge),
+                  Text("Preencha os dados", style: context.displayLarge),
 
-                      const VGap(height: AppSpacing.spacing24),
+                  const VGap(height: AppSpacing.spacing24),
 
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "E-mail",
-                          style: context.labelMedium?.copyWith(
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      "E-mail",
+                      style: context.labelMedium?.copyWith(
+                        fontWeight: FontWeight.w500,
                       ),
-
-                      const VGap(height: 8),
-
-                      PokeTextField(
-                        onChanged: (value) {},
-                        keyboardType: TextInputType.emailAddress,
-                        hint: "E-mail",
-                      ),
-
-                      const VGap(height: AppSpacing.spacing16),
-
-                      SizedBox(
-                        width: double.infinity,
-                        child: Text(
-                          "Senha",
-                          style: context.labelMedium?.copyWith(
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-
-                      const VGap(height: 8),
-
-                      PokeTextField(
-                        onChanged: (value) {},
-                        keyboardType: TextInputType.text,
-                        hint: "Senha",
-                        obscureText: isObscure,
-                        suffixIcon: IconButton(
-                          onPressed: () {
-                            ref.read(passwordObscureState.notifier).state =
-                                !isObscure;
-                          },
-                          icon: SvgPicture.asset(Assets.icons.icEye.path),
-                        ),
-                      ),
-
-                      const VGap(height: AppSpacing.spacing24),
-
-                      PokeTextButton(
-                        callback: () {},
-                        title: "Esqueceu sua senha?",
-                        backgroundColor: Colors.white,
-                        textColor: blue,
-                        style: context.labelSmall?.copyWith(fontSize: 14),
-                      ),
-
-                      VGap(
-                        height:
-                            MediaQuery.of(context).viewInsets.bottom +
-                            bottomSpace +
-                            findEmailButtonHeight,
-                      ),
-                    ],
+                    ),
                   ),
-                ),
+
+                  const VGap(height: 8),
+
+                  PokeTextField(
+                    onChanged: (value) {},
+                    keyboardType: TextInputType.emailAddress,
+                    hint: "E-mail",
+                  ),
+
+                  const VGap(height: AppSpacing.spacing16),
+
+                  SizedBox(
+                    width: double.infinity,
+                    child: Text(
+                      "Senha",
+                      style: context.labelMedium?.copyWith(
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+
+                  const VGap(height: 8),
+
+                  PokeTextField(
+                    onChanged: (value) {},
+                    keyboardType: TextInputType.text,
+                    hint: "Senha",
+                    obscureText: isObscure,
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        ref.read(passwordObscureState.notifier).state =
+                        !isObscure;
+                      },
+                      icon: SvgPicture.asset(Assets.icons.icEye.path),
+                    ),
+                  ),
+
+                  const VGap(height: AppSpacing.spacing24),
+
+                  PokeTextButton(
+                    callback: () {},
+                    title: "Esqueceu sua senha?",
+                    backgroundColor: Colors.white,
+                    textColor: blue,
+                    style: context.labelSmall?.copyWith(fontSize: 14),
+                  ),
+
+                  VGap(
+                    height:
+                    MediaQuery.of(context).viewInsets.bottom +
+                        bottomSpace +
+                        findEmailButtonHeight,
+                  ),
+                ],
               ),
-              Positioned(
-                bottom: MediaQuery.of(context).viewInsets.bottom + bottomSpace,
-                left: 12,
-                right: 12,
-                child: PokeTextButton(
-                  callback: () => context.pushReplacement(RoutePath.loginSuccess),
-                  title: "Entrar",
-                ),
-              ),
-            ],
+            ),
+          ),
+        ),
+      ),
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          child: PokeTextButton(
+            callback: () => context.pushReplacement(RoutePath.loginSuccess),
+            title: "Entrar",
           ),
         ),
       ),
