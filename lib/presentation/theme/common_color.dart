@@ -19,6 +19,8 @@ const lightGrey = Color(0xFFDBDCDD);
 const maleColor = Color(0xFF2551C3);
 const femaleColor = Color(0xFFFF7596);
 
+const circleIndicatorBackgroundColor = Color(0xFFCD3131);
+const circleIndicatorColor = Color(0x00CD3131);
 const Map<String, Color> greys = {
   "100": Color(0xFFE6E6E6),
   "400": Color(0xFF999999),

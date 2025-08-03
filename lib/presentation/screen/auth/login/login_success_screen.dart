@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/gen/assets.gen.dart';
+import 'package:flutter_pokedex/presentation/component/poke_text_button.dart';
+import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
+import 'package:flutter_pokedex/presentation/theme/common_color.dart';
+import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
+import 'package:flutter_pokedex/utils/app_spacing.dart';
+import 'package:flutter_pokedex/utils/trainer_images.dart';
 
 class LoginSuccessScreen extends StatelessWidget {
   const LoginSuccessScreen({super.key});
@@ -6,10 +13,59 @@ class LoginSuccessScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            children: [
+              Expanded(
+                child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+                    Positioned(
+                      left: -29,
+                      right: 70.58,
+                      child: FadeInImage.assetNetwork(
+                        placeholder: Assets.images.empty.path,
+                        image: TrainerImages.blue,
+                        fit: BoxFit.fitHeight,
+                      ),
+                    ),
+                    Positioned(
+                      left: 54.58,
+                      right: -13,
+                      child: FadeInImage.assetNetwork(
+                        placeholder: Assets.images.empty.path,
+                        image: TrainerImages.cynthia,
+                        fit: BoxFit.fitHeight,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const VGap(height: 51),
+              Text(
+                "Bem-vindo de volta, Treinador!",
+                style: context.displayMedium?.copyWith(color: Colors.black),
+                textAlign: TextAlign.center,
+              ),
 
-        ],
+              const VGap(height: AppSpacing.spacing16),
+
+              Text(
+                "Esperamos que tenha tido uma longa jornada desde a última vez em que nos visitou.",
+                style: context.bodyMedium?.copyWith(color: greys["600"]),
+                textAlign: TextAlign.center,
+              ),
+
+              const VGap(height: AppSpacing.height32),
+
+              PokeTextButton(callback: () {}, title: "Continuar"),
+
+              const VGap(height: AppSpacing.height40),
+            ],
+          ),
+        ),
       ),
     );
   }
