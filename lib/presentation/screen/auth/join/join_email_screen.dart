@@ -52,7 +52,7 @@ class JoinEmailScreen extends ConsumerWidget {
                   hint: 'E-mail',
                 ),
 
-                const VGap(height: 8),
+                const VGap(height: AppSpacing.spacing8),
 
                 Text(
                   "Use um endereço de e-mail válido.",

@@ -34,13 +34,13 @@ class FindPassword extends ConsumerWidget {
         child: SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16),
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.spacing16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const VGap(height: AppSpacing.spacing40),
 
-                Text("Vamos recuperar! ", style: context.displaySmall),
+                Text("Vamos recuperar!", style: context.displaySmall),
 
                 Text("Qual é o seu e-mail?", style: context.displayLarge),
 
@@ -53,7 +53,7 @@ class FindPassword extends ConsumerWidget {
                   hint: 'E-mail',
                 ),
 
-                const VGap(height: 8),
+                const VGap(height: AppSpacing.spacing8),
 
                 Text(
                   "Vamos enviar um código de verificação para o seu e-mail.",
@@ -65,7 +65,8 @@ class FindPassword extends ConsumerWidget {
                 PokeTextButton(
                   callback: () {
                     if (isValid) {
-                      //context.push(RoutePath.joinPassword);
+                      // TODO: Implement password recovery logic (e.g., API call).
+                      // Then navigate to the next screen in the flow.
                     }
                   },
                   isEnable: isValid,

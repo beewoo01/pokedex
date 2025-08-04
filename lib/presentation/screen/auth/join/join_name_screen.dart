@@ -51,7 +51,7 @@ class JoinNameScreen extends ConsumerWidget {
                   hint: 'Name',
                 ),
 
-                const VGap(height: 8),
+                const VGap(height: AppSpacing.spacing8),
 
                 Text(
                   "Esse será seu nome de usuário no aplicativo.",
