@@ -9,6 +9,7 @@ import 'package:flutter_pokedex/presentation/screen/auth/join/join_success_scree
 import 'package:flutter_pokedex/presentation/screen/auth/login/login_email_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/auth/login/login_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/auth/login/login_success_screen.dart';
+import 'package:flutter_pokedex/presentation/screen/auth/password/find_password.dart';
 import 'package:flutter_pokedex/presentation/screen/onboarding/on_boarding_root.dart';
 import 'package:flutter_pokedex/presentation/screen/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -119,4 +120,13 @@ class LoginSuccessRoute extends GoRouteData with _$LoginSuccessRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const LoginSuccessScreen();
+}
+
+@TypedGoRoute<FindPasswordRoute>(path: RoutePath.findPassword)
+class FindPasswordRoute extends GoRouteData with _$FindPasswordRoute {
+  const FindPasswordRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const FindPassword();
 }
