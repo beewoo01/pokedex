@@ -91,7 +91,7 @@ class LoginEmailScreen extends ConsumerWidget {
                   const VGap(height: AppSpacing.spacing24),
 
                   PokeTextButton(
-                    callback: () {},
+                    callback: () => context.push(RoutePath.findPassword),
                     title: "Esqueceu sua senha?",
                     backgroundColor: Colors.white,
                     textColor: blue,
