@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pokedex/gen/assets.gen.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_svg/flutter_svg.dart';

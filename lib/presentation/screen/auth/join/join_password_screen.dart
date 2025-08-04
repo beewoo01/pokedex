@@ -65,7 +65,7 @@ class JoinPasswordScreen extends ConsumerWidget {
                   ),
                 ),
 
-                const VGap(height: 8),
+                const VGap(height: AppSpacing.spacing8),
 
                 Text(
                   "Sua senha deve ter pelo menos 8 caracteres",

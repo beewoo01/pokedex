@@ -8,6 +8,7 @@ class AppSpacing {
 
   static const double spacing16 = 16;
   static const double spacing12 = 12;
+  static const double spacing8 = 8;
 
   static const double spacing19_5 = 19.5;
   static const double spacing23 = 23;

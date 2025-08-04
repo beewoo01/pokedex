@@ -53,7 +53,7 @@ class LoginEmailScreen extends ConsumerWidget {
                     ),
                   ),
 
-                  const VGap(height: 8),
+                  const VGap(height: AppSpacing.spacing8),
 
                   PokeTextField(
                     onChanged: (value) {},
@@ -73,7 +73,7 @@ class LoginEmailScreen extends ConsumerWidget {
                     ),
                   ),
 
-                  const VGap(height: 8),
+                  const VGap(height: AppSpacing.spacing8),
 
                   PokeTextField(
                     onChanged: (value) {},
