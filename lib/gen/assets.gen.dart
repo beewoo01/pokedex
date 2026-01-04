@@ -32,9 +32,41 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_eye.svg
   SvgGenImage get icEye => const SvgGenImage('assets/icons/ic_eye.svg');
 
+  /// File path: assets/icons/ic_favorites_off.svg
+  SvgGenImage get icFavoritesOff =>
+      const SvgGenImage('assets/icons/ic_favorites_off.svg');
+
+  /// File path: assets/icons/ic_favorites_on.svg
+  SvgGenImage get icFavoritesOn =>
+      const SvgGenImage('assets/icons/ic_favorites_on.svg');
+
   /// File path: assets/icons/ic_google_login.svg
   SvgGenImage get icGoogleLogin =>
       const SvgGenImage('assets/icons/ic_google_login.svg');
+
+  /// File path: assets/icons/ic_locations_off.svg
+  SvgGenImage get icLocationsOff =>
+      const SvgGenImage('assets/icons/ic_locations_off.svg');
+
+  /// File path: assets/icons/ic_locations_on.svg
+  SvgGenImage get icLocationsOn =>
+      const SvgGenImage('assets/icons/ic_locations_on.svg');
+
+  /// File path: assets/icons/ic_pokedex_off.svg
+  SvgGenImage get icPokedexOff =>
+      const SvgGenImage('assets/icons/ic_pokedex_off.svg');
+
+  /// File path: assets/icons/ic_pokedex_on.svg
+  SvgGenImage get icPokedexOn =>
+      const SvgGenImage('assets/icons/ic_pokedex_on.svg');
+
+  /// File path: assets/icons/ic_profile_off.svg
+  SvgGenImage get icProfileOff =>
+      const SvgGenImage('assets/icons/ic_profile_off.svg');
+
+  /// File path: assets/icons/ic_profile_on.svg
+  SvgGenImage get icProfileOn =>
+      const SvgGenImage('assets/icons/ic_profile_on.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [
@@ -42,7 +74,15 @@ class $AssetsIconsGen {
     arrowForward,
     icAppleLogin,
     icEye,
+    icFavoritesOff,
+    icFavoritesOn,
     icGoogleLogin,
+    icLocationsOff,
+    icLocationsOn,
+    icPokedexOff,
+    icPokedexOn,
+    icProfileOff,
+    icProfileOn,
   ];
 }
 

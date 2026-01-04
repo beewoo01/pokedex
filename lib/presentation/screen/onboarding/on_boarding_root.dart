@@ -4,11 +4,8 @@ import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
 import 'package:flutter_pokedex/presentation/router/route_path.dart';
 import 'package:flutter_pokedex/presentation/screen/onboarding/first_on_boarding_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/onboarding/second_on_boarding_screen.dart';
-import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
-import 'package:flutter_pokedex/presentation/theme/text_theme.dart';
 import 'package:flutter_pokedex/utils/app_spacing.dart';
-import 'package:flutter_pokedex/utils/logger.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
