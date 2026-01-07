@@ -10,6 +10,7 @@ import 'package:flutter_pokedex/presentation/screen/auth/login/login_email_scree
 import 'package:flutter_pokedex/presentation/screen/auth/login/login_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/auth/login/login_success_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/auth/password/find_password.dart';
+import 'package:flutter_pokedex/presentation/screen/home/home_screen.dart';
 import 'package:flutter_pokedex/presentation/screen/onboarding/on_boarding_root.dart';
 import 'package:flutter_pokedex/presentation/screen/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';
@@ -129,4 +130,12 @@ class FindPasswordRoute extends GoRouteData with _$FindPasswordRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       const FindPassword();
+}
+
+@TypedGoRoute<HomeRoute>(path: RoutePath.home)
+class HomeRoute extends GoRouteData with _$HomeRoute {
+  const HomeRoute();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const HomeScreen();
 }

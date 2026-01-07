@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/gen/assets.gen.dart';
 import 'package:flutter_pokedex/presentation/component/poke_text_button.dart';
 import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
+import 'package:flutter_pokedex/presentation/router/route_path.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_pokedex/utils/app_spacing.dart';
 import 'package:flutter_pokedex/utils/trainer_images.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginSuccessScreen extends StatelessWidget {
   const LoginSuccessScreen({super.key});
@@ -21,7 +23,7 @@ class LoginSuccessScreen extends StatelessWidget {
             child: Column(
               children: [
                 AspectRatio(
-                  aspectRatio: 13.5/20,
+                  aspectRatio: 13.5 / 20,
                   child: Stack(
                     alignment: Alignment.bottomCenter,
                     children: [
@@ -72,7 +74,12 @@ class LoginSuccessScreen extends StatelessWidget {
 
                 const VGap(height: AppSpacing.height32),
 
-                PokeTextButton(callback: () {}, title: "Continuar"),
+                PokeTextButton(
+                  callback: () {
+                    context.push(RoutePath.home);
+                  },
+                  title: "Continuar",
+                ),
 
                 const VGap(height: AppSpacing.height40),
               ],

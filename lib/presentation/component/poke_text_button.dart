@@ -35,9 +35,13 @@ class _PokeTextButtonState extends State<PokeTextButton> {
     }
   });
 
-  void _onTapUp() => setState(() {
+  void _onTapUp(bool isTab) => setState(() {
     if (widget.isEnable) {
       _pressed = false;
+    }
+
+    if (isTab) {
+      widget.callback();
     }
   });
 
@@ -45,8 +49,8 @@ class _PokeTextButtonState extends State<PokeTextButton> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTapDown: (_) => _onTapDown(),
-      onTapUp: (_) => _onTapUp(),
-      onTapCancel: () => _onTapUp(),
+      onTapUp: (_) => _onTapUp(true),
+      onTapCancel: () => _onTapUp(false),
       onTap: () => widget.isEnable ? widget.callback() : null,
       child: AnimatedScale(
         scale: _scale,

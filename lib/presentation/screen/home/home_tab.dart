@@ -17,7 +17,7 @@ extension HomeTabX on HomeTab {
       case HomeTab.pokedex:
         return Assets.icons.icPokedexOn;
       case HomeTab.regions:
-        return Assets.icons.icLocationsOn;
+        return Assets.icons.icRegionsOn;
       case HomeTab.favorites:
         return Assets.icons.icFavoritesOn;
       case HomeTab.profile:
@@ -30,7 +30,7 @@ extension HomeTabX on HomeTab {
       case HomeTab.pokedex:
         return Assets.icons.icPokedexOff;
       case HomeTab.regions:
-        return Assets.icons.icLocationsOff;
+        return Assets.icons.icRegionsOff;
       case HomeTab.favorites:
         return Assets.icons.icFavoritesOff;
       case HomeTab.profile:

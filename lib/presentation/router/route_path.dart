@@ -12,4 +12,6 @@ class RoutePath {
   static const authChoice = "/authChoice";
 
   static const findPassword = "/findPassword";
+
+  static const home = "/home";
 }

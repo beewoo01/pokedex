@@ -7,32 +7,75 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return const Placeholder();
+    return Scaffold(
+      body: const Center(child: Text('Home Screen')),
+      bottomNavigationBar: const CustomBottomNavitaionBar(),
+    );
+  }
+}
+
+class CustomBottomNavitaionBar extends StatefulWidget {
+  const CustomBottomNavitaionBar({super.key});
+
+  @override
+  State<CustomBottomNavitaionBar> createState() =>
+      _CustomBottomNavitaionBarState();
+}
+
+class _CustomBottomNavitaionBarState extends State<CustomBottomNavitaionBar> {
+  HomeTab selectedTab = HomeTab.pokedex;
+
+  @override
+  Widget build(BuildContext context) {
+    final List<Widget> widgets = HomeTab.values.map((tab) {
+      return BottomNavigationBarItem(
+        tab: tab,
+        isSelected: tab == selectedTab,
+        onTap: () {
+          setState(() {
+            selectedTab = tab;
+          });
+        },
+      );
+    }).toList();
+
+    return SizedBox(
+      height: 72,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: widgets,
+      ),
+    );
   }
 }
 
 class BottomNavigationBarItem extends ConsumerWidget {
   final HomeTab tab;
   final bool isSelected;
+  final VoidCallback onTap;
   const BottomNavigationBarItem({
     super.key,
     required this.tab,
     required this.isSelected,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return SizedBox(
-      width: 56,
-      height: 56,
-      child: Center(
-        child: AnimatedCrossFade(
-          firstChild: SelectIcon(tab: tab),
-          secondChild: UnSelectedIcon(tab: tab),
-          crossFadeState: isSelected
-              ? CrossFadeState.showFirst
-              : CrossFadeState.showSecond,
-          duration: const Duration(milliseconds: 200),
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: 60,
+        height: 60,
+        child: Center(
+          child: AnimatedCrossFade(
+            firstChild: SelectIcon(tab: tab),
+            secondChild: UnSelectedIcon(tab: tab),
+            crossFadeState: isSelected
+                ? CrossFadeState.showFirst
+                : CrossFadeState.showSecond,
+            duration: const Duration(milliseconds: 200),
+          ),
         ),
       ),
     );
@@ -45,7 +88,19 @@ class SelectIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return tab.getOnIcon.svg(width: 26, height: 26, fit: BoxFit.fitHeight);
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        tab.getOnIcon.svg(width: 26, height: 26, fit: BoxFit.fitHeight),
+        Text(
+          tab.label,
+          style: Theme.of(
+            context,
+          ).textTheme.labelSmall?.copyWith(color: Color(0xFF173EA5)),
+        ),
+      ],
+    );
   }
 }
 

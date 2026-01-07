@@ -44,14 +44,6 @@ class $AssetsIconsGen {
   SvgGenImage get icGoogleLogin =>
       const SvgGenImage('assets/icons/ic_google_login.svg');
 
-  /// File path: assets/icons/ic_locations_off.svg
-  SvgGenImage get icLocationsOff =>
-      const SvgGenImage('assets/icons/ic_locations_off.svg');
-
-  /// File path: assets/icons/ic_locations_on.svg
-  SvgGenImage get icLocationsOn =>
-      const SvgGenImage('assets/icons/ic_locations_on.svg');
-
   /// File path: assets/icons/ic_pokedex_off.svg
   SvgGenImage get icPokedexOff =>
       const SvgGenImage('assets/icons/ic_pokedex_off.svg');
@@ -68,6 +60,14 @@ class $AssetsIconsGen {
   SvgGenImage get icProfileOn =>
       const SvgGenImage('assets/icons/ic_profile_on.svg');
 
+  /// File path: assets/icons/ic_regions_off.svg
+  SvgGenImage get icRegionsOff =>
+      const SvgGenImage('assets/icons/ic_regions_off.svg');
+
+  /// File path: assets/icons/ic_regions_on.svg
+  SvgGenImage get icRegionsOn =>
+      const SvgGenImage('assets/icons/ic_regions_on.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
     arrowBackButton,
@@ -77,12 +77,12 @@ class $AssetsIconsGen {
     icFavoritesOff,
     icFavoritesOn,
     icGoogleLogin,
-    icLocationsOff,
-    icLocationsOn,
     icPokedexOff,
     icPokedexOn,
     icProfileOff,
     icProfileOn,
+    icRegionsOff,
+    icRegionsOn,
   ];
 }
 
