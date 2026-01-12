@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/gen/assets.gen.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class PokeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback callback;
@@ -15,7 +14,7 @@ class PokeAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       leading: IconButton(
         onPressed: () => callback(),
-        icon: SvgPicture.asset(Assets.icons.arrowBackButton.path),
+        icon: Assets.icons.arrowBackButton.svg(),
       ),
       scrolledUnderElevation: 0,
       centerTitle: true,

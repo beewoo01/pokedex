@@ -1,21 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/presentation/screen/home/favories/favories.dart';
 import 'package:flutter_pokedex/presentation/screen/home/home_tab.dart';
+import 'package:flutter_pokedex/presentation/screen/home/poke/poke_dex_tab.dart';
+import 'package:flutter_pokedex/presentation/screen/home/profile/profile_tab.dart';
+import 'package:flutter_pokedex/presentation/screen/home/regions/region_tab.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final currentTabProvider = StateProvider<HomeTab>((ref) => HomeTab.pokedex);
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final selectedTab = ref.watch(currentTabProvider);
+
     return Scaffold(
-      body: const Center(child: Text('Home Screen')),
-      bottomNavigationBar: const CustomBottomNavitaionBar(),
+      body: _getTabScreen(selectedTab),
+      bottomNavigationBar: CustomBottomNavitaionBar(
+        currentTab: selectedTab,
+        onTab: (HomeTab homeTab) {
+          ref.read(currentTabProvider.notifier).state = homeTab;
+        },
+      ),
     );
+  }
+
+  Widget _getTabScreen(HomeTab tab) {
+    switch (tab) {
+      case HomeTab.pokedex:
+        return const PokeDexTab();
+      case HomeTab.regions:
+        return const RegionTab();
+      case HomeTab.favorites:
+        return const FavoriesTab();
+      case HomeTab.profile:
+        return ProfileTab();
+    }
   }
 }
 
 class CustomBottomNavitaionBar extends StatefulWidget {
-  const CustomBottomNavitaionBar({super.key});
+  final HomeTab currentTab;
+  final Function(HomeTab) onTab;
+  const CustomBottomNavitaionBar({
+    super.key,
+    required this.currentTab,
+    required this.onTab,
+  });
 
   @override
   State<CustomBottomNavitaionBar> createState() =>
@@ -23,19 +55,14 @@ class CustomBottomNavitaionBar extends StatefulWidget {
 }
 
 class _CustomBottomNavitaionBarState extends State<CustomBottomNavitaionBar> {
-  HomeTab selectedTab = HomeTab.pokedex;
 
   @override
   Widget build(BuildContext context) {
     final List<Widget> widgets = HomeTab.values.map((tab) {
       return BottomNavigationBarItem(
         tab: tab,
-        isSelected: tab == selectedTab,
-        onTap: () {
-          setState(() {
-            selectedTab = tab;
-          });
-        },
+        isSelected: tab == widget.currentTab,
+        onTap: () => widget.onTab(tab),
       );
     }).toList();
 
