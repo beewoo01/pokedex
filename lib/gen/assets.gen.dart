@@ -32,9 +32,185 @@ class $AssetsIconsGen {
   /// File path: assets/icons/ic_eye.svg
   SvgGenImage get icEye => const SvgGenImage('assets/icons/ic_eye.svg');
 
+  /// File path: assets/icons/ic_favorites_off.svg
+  SvgGenImage get icFavoritesOff =>
+      const SvgGenImage('assets/icons/ic_favorites_off.svg');
+
+  /// File path: assets/icons/ic_favorites_on.svg
+  SvgGenImage get icFavoritesOn =>
+      const SvgGenImage('assets/icons/ic_favorites_on.svg');
+
   /// File path: assets/icons/ic_google_login.svg
   SvgGenImage get icGoogleLogin =>
       const SvgGenImage('assets/icons/ic_google_login.svg');
+
+  /// File path: assets/icons/ic_pokedex_off.svg
+  SvgGenImage get icPokedexOff =>
+      const SvgGenImage('assets/icons/ic_pokedex_off.svg');
+
+  /// File path: assets/icons/ic_pokedex_on.svg
+  SvgGenImage get icPokedexOn =>
+      const SvgGenImage('assets/icons/ic_pokedex_on.svg');
+
+  /// File path: assets/icons/ic_profile_off.svg
+  SvgGenImage get icProfileOff =>
+      const SvgGenImage('assets/icons/ic_profile_off.svg');
+
+  /// File path: assets/icons/ic_profile_on.svg
+  SvgGenImage get icProfileOn =>
+      const SvgGenImage('assets/icons/ic_profile_on.svg');
+
+  /// File path: assets/icons/ic_regions_off.svg
+  SvgGenImage get icRegionsOff =>
+      const SvgGenImage('assets/icons/ic_regions_off.svg');
+
+  /// File path: assets/icons/ic_regions_on.svg
+  SvgGenImage get icRegionsOn =>
+      const SvgGenImage('assets/icons/ic_regions_on.svg');
+
+  /// File path: assets/icons/icon_type_bug.svg
+  SvgGenImage get iconTypeBug =>
+      const SvgGenImage('assets/icons/icon_type_bug.svg');
+
+  /// File path: assets/icons/icon_type_bug_gradient.svg
+  SvgGenImage get iconTypeBugGradient =>
+      const SvgGenImage('assets/icons/icon_type_bug_gradient.svg');
+
+  /// File path: assets/icons/icon_type_dark.svg
+  SvgGenImage get iconTypeDark =>
+      const SvgGenImage('assets/icons/icon_type_dark.svg');
+
+  /// File path: assets/icons/icon_type_dark_gradient.svg
+  SvgGenImage get iconTypeDarkGradient =>
+      const SvgGenImage('assets/icons/icon_type_dark_gradient.svg');
+
+  /// File path: assets/icons/icon_type_dragon.svg
+  SvgGenImage get iconTypeDragon =>
+      const SvgGenImage('assets/icons/icon_type_dragon.svg');
+
+  /// File path: assets/icons/icon_type_dragon_gradient.svg
+  SvgGenImage get iconTypeDragonGradient =>
+      const SvgGenImage('assets/icons/icon_type_dragon_gradient.svg');
+
+  /// File path: assets/icons/icon_type_electric.svg
+  SvgGenImage get iconTypeElectric =>
+      const SvgGenImage('assets/icons/icon_type_electric.svg');
+
+  /// File path: assets/icons/icon_type_electric_gradient.svg
+  SvgGenImage get iconTypeElectricGradient =>
+      const SvgGenImage('assets/icons/icon_type_electric_gradient.svg');
+
+  /// File path: assets/icons/icon_type_fairy.svg
+  SvgGenImage get iconTypeFairy =>
+      const SvgGenImage('assets/icons/icon_type_fairy.svg');
+
+  /// File path: assets/icons/icon_type_fairy_gradient.svg
+  SvgGenImage get iconTypeFairyGradient =>
+      const SvgGenImage('assets/icons/icon_type_fairy_gradient.svg');
+
+  /// File path: assets/icons/icon_type_fighting.svg
+  SvgGenImage get iconTypeFighting =>
+      const SvgGenImage('assets/icons/icon_type_fighting.svg');
+
+  /// File path: assets/icons/icon_type_fighting_gradient.svg
+  SvgGenImage get iconTypeFightingGradient =>
+      const SvgGenImage('assets/icons/icon_type_fighting_gradient.svg');
+
+  /// File path: assets/icons/icon_type_fire.svg
+  SvgGenImage get iconTypeFire =>
+      const SvgGenImage('assets/icons/icon_type_fire.svg');
+
+  /// File path: assets/icons/icon_type_fire_gradient.svg
+  SvgGenImage get iconTypeFireGradient =>
+      const SvgGenImage('assets/icons/icon_type_fire_gradient.svg');
+
+  /// File path: assets/icons/icon_type_flying.svg
+  SvgGenImage get iconTypeFlying =>
+      const SvgGenImage('assets/icons/icon_type_flying.svg');
+
+  /// File path: assets/icons/icon_type_flying_gradient.svg
+  SvgGenImage get iconTypeFlyingGradient =>
+      const SvgGenImage('assets/icons/icon_type_flying_gradient.svg');
+
+  /// File path: assets/icons/icon_type_ghost.svg
+  SvgGenImage get iconTypeGhost =>
+      const SvgGenImage('assets/icons/icon_type_ghost.svg');
+
+  /// File path: assets/icons/icon_type_ghost_gradient.svg
+  SvgGenImage get iconTypeGhostGradient =>
+      const SvgGenImage('assets/icons/icon_type_ghost_gradient.svg');
+
+  /// File path: assets/icons/icon_type_grass.svg
+  SvgGenImage get iconTypeGrass =>
+      const SvgGenImage('assets/icons/icon_type_grass.svg');
+
+  /// File path: assets/icons/icon_type_grass_gradient.svg
+  SvgGenImage get iconTypeGrassGradient =>
+      const SvgGenImage('assets/icons/icon_type_grass_gradient.svg');
+
+  /// File path: assets/icons/icon_type_ground.svg
+  SvgGenImage get iconTypeGround =>
+      const SvgGenImage('assets/icons/icon_type_ground.svg');
+
+  /// File path: assets/icons/icon_type_ground_gradient.svg
+  SvgGenImage get iconTypeGroundGradient =>
+      const SvgGenImage('assets/icons/icon_type_ground_gradient.svg');
+
+  /// File path: assets/icons/icon_type_ice.svg
+  SvgGenImage get iconTypeIce =>
+      const SvgGenImage('assets/icons/icon_type_ice.svg');
+
+  /// File path: assets/icons/icon_type_ice_gradient.svg
+  SvgGenImage get iconTypeIceGradient =>
+      const SvgGenImage('assets/icons/icon_type_ice_gradient.svg');
+
+  /// File path: assets/icons/icon_type_normal.svg
+  SvgGenImage get iconTypeNormal =>
+      const SvgGenImage('assets/icons/icon_type_normal.svg');
+
+  /// File path: assets/icons/icon_type_normal_gradient.svg
+  SvgGenImage get iconTypeNormalGradient =>
+      const SvgGenImage('assets/icons/icon_type_normal_gradient.svg');
+
+  /// File path: assets/icons/icon_type_poison.svg
+  SvgGenImage get iconTypePoison =>
+      const SvgGenImage('assets/icons/icon_type_poison.svg');
+
+  /// File path: assets/icons/icon_type_poison_gradient.svg
+  SvgGenImage get iconTypePoisonGradient =>
+      const SvgGenImage('assets/icons/icon_type_poison_gradient.svg');
+
+  /// File path: assets/icons/icon_type_psychic.svg
+  SvgGenImage get iconTypePsychic =>
+      const SvgGenImage('assets/icons/icon_type_psychic.svg');
+
+  /// File path: assets/icons/icon_type_psychic_gradient.svg
+  SvgGenImage get iconTypePsychicGradient =>
+      const SvgGenImage('assets/icons/icon_type_psychic_gradient.svg');
+
+  /// File path: assets/icons/icon_type_rock.svg
+  SvgGenImage get iconTypeRock =>
+      const SvgGenImage('assets/icons/icon_type_rock.svg');
+
+  /// File path: assets/icons/icon_type_rock_gradient.svg
+  SvgGenImage get iconTypeRockGradient =>
+      const SvgGenImage('assets/icons/icon_type_rock_gradient.svg');
+
+  /// File path: assets/icons/icon_type_steel.svg
+  SvgGenImage get iconTypeSteel =>
+      const SvgGenImage('assets/icons/icon_type_steel.svg');
+
+  /// File path: assets/icons/icon_type_steel_gradient.svg
+  SvgGenImage get iconTypeSteelGradient =>
+      const SvgGenImage('assets/icons/icon_type_steel_gradient.svg');
+
+  /// File path: assets/icons/icon_type_water.svg
+  SvgGenImage get iconTypeWater =>
+      const SvgGenImage('assets/icons/icon_type_water.svg');
+
+  /// File path: assets/icons/icon_type_water_gradient.svg
+  SvgGenImage get iconTypeWaterGradient =>
+      const SvgGenImage('assets/icons/icon_type_water_gradient.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [
@@ -42,7 +218,51 @@ class $AssetsIconsGen {
     arrowForward,
     icAppleLogin,
     icEye,
+    icFavoritesOff,
+    icFavoritesOn,
     icGoogleLogin,
+    icPokedexOff,
+    icPokedexOn,
+    icProfileOff,
+    icProfileOn,
+    icRegionsOff,
+    icRegionsOn,
+    iconTypeBug,
+    iconTypeBugGradient,
+    iconTypeDark,
+    iconTypeDarkGradient,
+    iconTypeDragon,
+    iconTypeDragonGradient,
+    iconTypeElectric,
+    iconTypeElectricGradient,
+    iconTypeFairy,
+    iconTypeFairyGradient,
+    iconTypeFighting,
+    iconTypeFightingGradient,
+    iconTypeFire,
+    iconTypeFireGradient,
+    iconTypeFlying,
+    iconTypeFlyingGradient,
+    iconTypeGhost,
+    iconTypeGhostGradient,
+    iconTypeGrass,
+    iconTypeGrassGradient,
+    iconTypeGround,
+    iconTypeGroundGradient,
+    iconTypeIce,
+    iconTypeIceGradient,
+    iconTypeNormal,
+    iconTypeNormalGradient,
+    iconTypePoison,
+    iconTypePoisonGradient,
+    iconTypePsychic,
+    iconTypePsychicGradient,
+    iconTypeRock,
+    iconTypeRockGradient,
+    iconTypeSteel,
+    iconTypeSteelGradient,
+    iconTypeWater,
+    iconTypeWaterGradient,
   ];
 }
 

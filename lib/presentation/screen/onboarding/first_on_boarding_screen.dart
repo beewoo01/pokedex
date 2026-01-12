@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pokedex/gen/assets.gen.dart';
-import 'package:flutter_pokedex/presentation/component/custom_network_image.dart';
 import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
