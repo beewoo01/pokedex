@@ -68,6 +68,14 @@ class $AssetsIconsGen {
   SvgGenImage get icRegionsOn =>
       const SvgGenImage('assets/icons/ic_regions_on.svg');
 
+  /// File path: assets/icons/icon_arrow_bottom.svg
+  SvgGenImage get iconArrowBottom =>
+      const SvgGenImage('assets/icons/icon_arrow_bottom.svg');
+
+  /// File path: assets/icons/icon_search.svg
+  SvgGenImage get iconSearch =>
+      const SvgGenImage('assets/icons/icon_search.svg');
+
   /// File path: assets/icons/icon_type_bug.svg
   SvgGenImage get iconTypeBug =>
       const SvgGenImage('assets/icons/icon_type_bug.svg');
@@ -227,6 +235,8 @@ class $AssetsIconsGen {
     icProfileOn,
     icRegionsOff,
     icRegionsOn,
+    iconArrowBottom,
+    iconSearch,
     iconTypeBug,
     iconTypeBugGradient,
     iconTypeDark,

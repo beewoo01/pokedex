@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pokedex/gen/assets.gen.dart';
+import 'package:flutter_pokedex/presentation/component/width_and_height.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 
@@ -71,6 +73,43 @@ class _PokeTextButtonState extends State<PokeTextButton> {
                   context.headlineLarge?.copyWith(color: widget.textColor),
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class DefaultArrowIconButton extends StatelessWidget {
+  final VoidCallback onPressed;
+  final String text;
+  const DefaultArrowIconButton({
+    super.key,
+    required this.onPressed,
+    required this.text,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(100),
+          color: Color(0xFF333333),
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Text(
+                text,
+                style: context.labelMedium?.copyWith(color: Colors.white),
+              ),
+            ),
+            const WGap(width: 8),
+            Assets.icons.iconArrowBottom.svg(width: 10, height: 24),
+          ],
         ),
       ),
     );

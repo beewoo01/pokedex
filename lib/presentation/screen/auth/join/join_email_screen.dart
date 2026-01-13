@@ -6,7 +6,7 @@ import 'package:flutter_pokedex/presentation/router/route_path.dart';
 import 'package:flutter_pokedex/presentation/theme/common_color.dart';
 import 'package:flutter_pokedex/presentation/theme/custom_text_theme.dart';
 import 'package:flutter_pokedex/utils/app_spacing.dart';
-import 'package:flutter_pokedex/utils/poke_text_field.dart';
+import 'package:flutter_pokedex/presentation/component/poke_text_field.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 

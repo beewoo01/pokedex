@@ -15,13 +15,19 @@ class HomeScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final selectedTab = ref.watch(currentTabProvider);
 
-    return Scaffold(
-      body: _getTabScreen(selectedTab),
-      bottomNavigationBar: CustomBottomNavitaionBar(
-        currentTab: selectedTab,
-        onTab: (HomeTab homeTab) {
-          ref.read(currentTabProvider.notifier).state = homeTab;
-        },
+    return Container(
+      color: Colors.white,
+      child: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          body: _getTabScreen(selectedTab),
+          bottomNavigationBar: CustomBottomNavitaionBar(
+            currentTab: selectedTab,
+            onTab: (HomeTab homeTab) {
+              ref.read(currentTabProvider.notifier).state = homeTab;
+            },
+          ),
+        ),
       ),
     );
   }
@@ -55,7 +61,6 @@ class CustomBottomNavitaionBar extends StatefulWidget {
 }
 
 class _CustomBottomNavitaionBarState extends State<CustomBottomNavitaionBar> {
-
   @override
   Widget build(BuildContext context) {
     final List<Widget> widgets = HomeTab.values.map((tab) {
@@ -89,7 +94,9 @@ class BottomNavigationBarItem extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return GestureDetector(
+    return InkWell(
+      splashFactory: NoSplash.splashFactory,
+      highlightColor: Colors.transparent,
       onTap: onTap,
       child: SizedBox(
         width: 60,
