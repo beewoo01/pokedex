@@ -109,7 +109,7 @@ class LoginEmailScreen extends ConsumerWidget {
       ),
       bottomNavigationBar: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 16.0),
           child: PokeTextButton(
             callback: () => context.pushReplacement(RoutePath.loginSuccess),
             title: "Entrar",

@@ -27,3 +27,22 @@ const Map<String, Color> greys = {
   "600": Color(0xFF666666),
   "700": Color(0xFF4D4D4D),
 };
+
+const normalColor = Color(0xFF919AA2);
+const fireColor = Color(0xFFFF9D55);
+const aquaColor = Color(0xFF5090D6);
+const electricColor = Color(0xFFF4D23C);
+const grassColor = Color(0xFF63BC5A);
+const iceColor = Color(0xFF73CEC0);
+const fightingColor = Color(0xFFCE416B);
+const poisonColor = Color(0xFFB567CE);
+const groundColor = Color(0xFFD97845);
+const flyingColor = Color(0xFF89AAE3);
+const psychicColor = Color(0xFFFA7179);
+const bugColor = Color(0xFF91C12F);
+const rockColor = Color(0xFFC5B78C);
+const ghostColor = Color(0xFF5269AD);
+const dragonColor = Color(0xFF0B6DC3);
+const darkColor = Color(0xFF5A5465);
+const steelColor = Color(0xFF5A8EA2);
+const fairyColor = Color(0xFFEC8FE6);

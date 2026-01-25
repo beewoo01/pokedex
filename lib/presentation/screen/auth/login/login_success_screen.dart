@@ -18,11 +18,11 @@ class LoginSuccessScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                AspectRatio(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+          child: Column(
+            children: [
+              Expanded(
+                child: AspectRatio(
                   aspectRatio: 13.5 / 20,
                   child: Stack(
                     alignment: Alignment.bottomCenter,
@@ -56,34 +56,34 @@ class LoginSuccessScreen extends StatelessWidget {
                     ],
                   ),
                 ),
+              ),
 
-                const VGap(height: 51),
-                Text(
-                  "Bem-vindo de volta, Treinador!",
-                  style: context.displayMedium?.copyWith(color: Colors.black),
-                  textAlign: TextAlign.center,
-                ),
+              const VGap(height: 51),
+              Text(
+                "Bem-vindo de volta, Treinador!",
+                style: context.displayMedium?.copyWith(color: Colors.black),
+                textAlign: TextAlign.center,
+              ),
 
-                const VGap(height: AppSpacing.spacing16),
+              const VGap(height: AppSpacing.spacing16),
 
-                Text(
-                  "Esperamos que tenha tido uma longa jornada desde a última vez em que nos visitou.",
-                  style: context.bodyMedium?.copyWith(color: greys["600"]),
-                  textAlign: TextAlign.center,
-                ),
+              Text(
+                "Esperamos que tenha tido uma longa jornada desde a última vez em que nos visitou.",
+                style: context.bodyMedium?.copyWith(color: greys["600"]),
+                textAlign: TextAlign.center,
+              ),
 
-                const VGap(height: AppSpacing.height32),
+              const VGap(height: AppSpacing.height32),
 
-                PokeTextButton(
-                  callback: () {
-                    context.push(RoutePath.home);
-                  },
-                  title: "Continuar",
-                ),
+              PokeTextButton(
+                callback: () {
+                  context.push(RoutePath.home);
+                },
+                title: "Continuar",
+              ),
 
-                const VGap(height: AppSpacing.height40),
-              ],
-            ),
+              const VGap(height: AppSpacing.height40),
+            ],
           ),
         ),
       ),
